@@ -1,0 +1,6 @@
+framework module Pods_SetKit_Example {
+  umbrella header "Pods-SetKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

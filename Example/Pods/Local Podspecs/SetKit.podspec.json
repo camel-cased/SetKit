@@ -1,0 +1,22 @@
+{
+  "name": "SetKit",
+  "version": "0.1.0",
+  "summary": "A short description of SetKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/camel-cased/SetKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "camel-cased": "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"
+  },
+  "source": {
+    "git": "https://github.com/camel-cased/SetKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "SetKit/Classes/**/*"
+}

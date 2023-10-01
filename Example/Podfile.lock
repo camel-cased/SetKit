@@ -1,0 +1,16 @@
+PODS:
+  - SetKit (0.1.0)
+
+DEPENDENCIES:
+  - SetKit (from `../`)
+
+EXTERNAL SOURCES:
+  SetKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SetKit: 969ad752b96d8345e1c075eb14d14a0f6bfefbed
+
+PODFILE CHECKSUM: bd186267bb1815cf2837da42938369b96bea364f
+
+COCOAPODS: 1.13.0
