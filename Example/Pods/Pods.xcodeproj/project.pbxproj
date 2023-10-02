@@ -225,6 +225,24 @@
 		C07297E72AC9C1D700EA7AF0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C07297EA2AC9C22700EA7AF0 /* PropertySetter+Base.swift */,
+				C07297F32AC9C81100EA7AF0 /* ViewShape.swift */,
+				C07298022ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift */,
+				C07297FF2ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift */,
+				C072980B2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift */,
+				C072980E2ACB064F00EA7AF0 /* UIImagePickerController+PropertySetter.swift */,
+				C07298112ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift */,
+				C07297F62AC9C8B100EA7AF0 /* UIControl+PropertySetter.swift */,
+				C07297F92AC9C94000EA7AF0 /* UIButton+PropertySetter.swift */,
+				C07297ED2AC9C24100EA7AF0 /* UIView+PropertySetter.swift */,
+				C07297F02AC9C33A00EA7AF0 /* UILabel+PropertySetter.swift */,
+				C07298142ACB0A9900EA7AF0 /* UIPickerView+PropertySetter.swift */,
+				C07298172ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift */,
+				C072981A2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift */,
+				C07297FC2ACAE92600EA7AF0 /* UIImageView+ProperySetter.swift */,
+				C072981D2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift */,
+				C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */,
+				C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */,
 				C07297E92AC9C1F200EA7AF0 /* Core */,
 				C07297E82AC9C1E600EA7AF0 /* UIKit+SetKit */,
 			);
@@ -243,8 +261,6 @@
 		C07297E92AC9C1F200EA7AF0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C07297EA2AC9C22700EA7AF0 /* PropertySetter+Base.swift */,
-				C07297F32AC9C81100EA7AF0 /* ViewShape.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -253,15 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				C07298082ACB016E00EA7AF0 /* UIControl+Subclasses */,
-				C07297ED2AC9C24100EA7AF0 /* UIView+PropertySetter.swift */,
-				C07297F02AC9C33A00EA7AF0 /* UILabel+PropertySetter.swift */,
-				C07298142ACB0A9900EA7AF0 /* UIPickerView+PropertySetter.swift */,
-				C07298172ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift */,
-				C072981A2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift */,
-				C07297FC2ACAE92600EA7AF0 /* UIImageView+ProperySetter.swift */,
-				C072981D2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift */,
-				C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */,
-				C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */,
 			);
 			path = "UIView+Subclasses";
 			sourceTree = "<group>";
@@ -269,8 +276,6 @@
 		C07298082ACB016E00EA7AF0 /* UIControl+Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				C07297F62AC9C8B100EA7AF0 /* UIControl+PropertySetter.swift */,
-				C07297F92AC9C94000EA7AF0 /* UIButton+PropertySetter.swift */,
 			);
 			path = "UIControl+Subclasses";
 			sourceTree = "<group>";
@@ -279,10 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				C072980A2ACB01C700EA7AF0 /* UINavigationController+Subclasses */,
-				C07297FF2ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift */,
-				C072980B2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift */,
-				C072980E2ACB064F00EA7AF0 /* UIImagePickerController+PropertySetter.swift */,
-				C07298112ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift */,
 			);
 			path = "UIViewController+Subclasses";
 			sourceTree = "<group>";
@@ -290,7 +291,6 @@
 		C072980A2ACB01C700EA7AF0 /* UINavigationController+Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				C07298022ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift */,
 			);
 			path = "UINavigationController+Subclasses";
 			sourceTree = "<group>";
