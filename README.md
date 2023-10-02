@@ -16,8 +16,7 @@ Swift 4.0+
 
 ## Installation
 
-SetKit is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your `Podfile`:
+SetKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
 ```
 target '<Your Target Name>' do
@@ -31,7 +30,7 @@ Then, run the following command:
 $ pod install
 ```
 
-## Example
+## Code example
 
 ```
 import SetKit
@@ -64,15 +63,67 @@ class MyViewController: UIViewController {
         someButton.set
             .title("Done")
             .titleColor(.green)
-            .tap {
-                // button tapped handler
-            }
     }
     
+}
+```
+
+## Supported classes
+Here is the list of classes supported by SetKit:
+
+* UIViewController+Subclasses:
+- UINavigationController
+- UITabBarController
+- UIImagePickerController
+- UIVideoEditorController
+
+* UIView+Subclasses
+- UIView
+- UILabel
+- UIPickerView
+- UIProgressView
+- UIActivityIndicatorView
+- UIImageView
+- UITabBar
+- UIToolbar
+- UINavigationBar
+- UIControl
+- UIButton
+
+## Custom extensions
+You can extend PropertySetter to make generic UI elements like this:
+
+```
+extension PropertySetter where Base: UILabel {
+  
+  @discardableResult
+  func personInfoLabelStyle(info: String) -> Self {
+    base.set
+      .text(info)
+      .font(.systemFont(ofSize: 15))
+      .textColor(.systemBlue)
+      .borderWidth(1)
+      .borderColor(.systemBlue)
+      .alpha(0.7)
+    return self
+  }
+  
 }
 
 ```
 
+And then use it like any other PropertySetter:
+
+```
+...
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameLabel.set
+          .personInfoLabelStyle(info: "Alex")
+    }
+...
+
+```
 
 ## Author
 

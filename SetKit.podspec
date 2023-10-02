@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SetKit'
   s.version          = '0.0.1'
-  s.summary          = 'SetKit is a library for managing UIKit class properties in a declarative style'
+  s.summary          = 'SetKit is a library for managing UIKit classes properties in a declarative style'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -38,5 +38,4 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
