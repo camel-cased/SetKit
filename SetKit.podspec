@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'SetKit/Classes/*.swift'
+  s.source_files = 'Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'SetKit' => ['SetKit/Assets/*.png']

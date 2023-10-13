@@ -1,9 +1,25 @@
 //
 //  UIView+PropertySetter.swift
-//  Pods
 //
-//  Created by Oleksandr Kabanov on 01.10.2023.
+//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
 //
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
@@ -199,6 +215,13 @@ public extension PropertySetter where Base: UIView {
     return self
   }
   
+  /// PropertySetter wrapper for `.addGestureRecognizer(_:)`
+  @discardableResult
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) -> Self {
+    base.addGestureRecognizer(gestureRecognizer)
+    return self
+  }
+  
   /// PropertySetter wrapper for `.gestureRecognizers`
   @discardableResult
   func gestureRecognizers(_ gestureRecognizers: [UIGestureRecognizer]?) -> Self {
@@ -280,9 +303,11 @@ public extension PropertySetter where Base: UIView {
     switch shape {
     case .circle:
       base.layer.cornerRadius = base.bounds.height * 0.5
-    case .roundedRect(let radius, maskedCorners: let maskedCorners):
+    case .roundedRect(let radius):
       base.layer.cornerRadius = radius
-      base.layer.maskedCorners = maskedCorners
+    case .roundedRectWith(maskedCorners: let corners, let radius):
+      base.layer.cornerRadius = radius
+      base.layer.maskedCorners = corners
     }
     return self
   }
@@ -317,6 +342,27 @@ public extension PropertySetter where Base: UIView {
   @discardableResult
   func borderColor(_ color: CGColor) -> Self {
     base.layer.borderColor = color
+    return self
+  }
+  
+  /// PropertySetter to add shadow
+  /// - Note: Sets `.layer.shouldRasterize = true`
+  /// - Attention: Use this `PropertySetter` only in `viewDidLayoutSubviews()` method for `UIViewController` subclass or in `layoutSubviews()` method for `UIView` subclass.
+  @discardableResult
+  func shadow(
+    radius: CGFloat,
+    opacity: Float = 1,
+    color: UIColor,
+    shadowOffSet: CGSize = .zero
+  ) -> Self {
+    base.layer.shadowColor = color.cgColor
+    base.layer.shadowRadius = radius
+    base.layer.shadowOpacity = opacity
+    base.layer.shadowOffset = shadowOffSet
+    base.layer.masksToBounds = false
+    base.layer.shadowPath = UIBezierPath(rect: base.bounds).cgPath
+    base.layer.rasterizationScale = UIScreen.main.scale
+    base.layer.shouldRasterize = true
     return self
   }
 }

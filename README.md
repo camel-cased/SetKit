@@ -32,7 +32,7 @@ $ pod install
 
 ## Code example
 
-```
+```swift
 import SetKit
 
 class MyViewController: UIViewController {

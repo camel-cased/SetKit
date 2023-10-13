@@ -50,6 +50,14 @@
 		C07298222ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */; };
 		C07298242ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */; };
 		C07298252ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */; };
+		C0FC78B62AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */; };
+		C0FC78B72AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */; };
+		C0FC78BA2AD331A70058066A /* UIAlertController+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */; };
+		C0FC78BB2AD331A70058066A /* UIAlertController+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */; };
+		C0FC78BD2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78BC2AD337B00058066A /* UIScrollView+PropertySetter.swift */; };
+		C0FC78BE2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78BC2AD337B00058066A /* UIScrollView+PropertySetter.swift */; };
+		C0FC78C02AD341C70058066A /* UINavigationItem+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78BF2AD341C70058066A /* UINavigationItem+PropertySetter.swift */; };
+		C0FC78C12AD341C70058066A /* UINavigationItem+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78BF2AD341C70058066A /* UINavigationItem+PropertySetter.swift */; };
 		E82E7065D71E86CA8F304E068B04EF8B /* SetKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1942470F2B94DA43554C3D00C49B4B43 /* SetKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4F4029042ADB0AE2CA9260983A5422F /* SetKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B49CB469B753C7DF0896BAB4C28AE2B /* SetKit-dummy.m */; };
 /* End PBXBuildFile section */
@@ -116,6 +124,10 @@
 		C072981D2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+PropertySetter.swift"; sourceTree = "<group>"; };
 		C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+PropertySetter.swift"; sourceTree = "<group>"; };
 		C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+PropertySetter.swift"; sourceTree = "<group>"; };
+		C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+PropertySetter.swift"; sourceTree = "<group>"; };
+		C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+PropertySetter.swift"; sourceTree = "<group>"; };
+		C0FC78BC2AD337B00058066A /* UIScrollView+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PropertySetter.swift"; sourceTree = "<group>"; };
+		C0FC78BF2AD341C70058066A /* UINavigationItem+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+PropertySetter.swift"; sourceTree = "<group>"; };
 		C8741897EABD405B7F3EE4EED60F30E2 /* SetKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SetKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		D79B20CD93CFD6E8EC1A27F68A1F192C /* Pods_SetKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SetKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13DDCA00408A60282DA57B8BD6E3507 /* Pods-SetKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SetKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -225,13 +237,21 @@
 		C07297E72AC9C1D700EA7AF0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C07297EA2AC9C22700EA7AF0 /* PropertySetter+Base.swift */,
-				C07297F32AC9C81100EA7AF0 /* ViewShape.swift */,
+				C0FC78AF2AD3287D0058066A /* Base */,
+				C07297E92AC9C1F200EA7AF0 /* UIKit+PropertySetter */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C07297E92AC9C1F200EA7AF0 /* UIKit+PropertySetter */ = {
+			isa = PBXGroup;
+			children = (
 				C07298022ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift */,
 				C07297FF2ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift */,
 				C072980B2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift */,
 				C072980E2ACB064F00EA7AF0 /* UIImagePickerController+PropertySetter.swift */,
 				C07298112ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift */,
+				C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */,
 				C07297F62AC9C8B100EA7AF0 /* UIControl+PropertySetter.swift */,
 				C07297F92AC9C94000EA7AF0 /* UIButton+PropertySetter.swift */,
 				C07297ED2AC9C24100EA7AF0 /* UIView+PropertySetter.swift */,
@@ -242,57 +262,21 @@
 				C07297FC2ACAE92600EA7AF0 /* UIImageView+ProperySetter.swift */,
 				C072981D2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift */,
 				C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */,
+				C0FC78BF2AD341C70058066A /* UINavigationItem+PropertySetter.swift */,
 				C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */,
-				C07297E92AC9C1F200EA7AF0 /* Core */,
-				C07297E82AC9C1E600EA7AF0 /* UIKit+SetKit */,
+				C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */,
+				C0FC78BC2AD337B00058066A /* UIScrollView+PropertySetter.swift */,
 			);
-			path = Classes;
+			path = "UIKit+PropertySetter";
 			sourceTree = "<group>";
 		};
-		C07297E82AC9C1E600EA7AF0 /* UIKit+SetKit */ = {
+		C0FC78AF2AD3287D0058066A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C07298092ACB019C00EA7AF0 /* UIViewController+Subclasses */,
-				C07298072ACB014700EA7AF0 /* UIView+Subclasses */,
+				C07297EA2AC9C22700EA7AF0 /* PropertySetter+Base.swift */,
+				C07297F32AC9C81100EA7AF0 /* ViewShape.swift */,
 			);
-			path = "UIKit+SetKit";
-			sourceTree = "<group>";
-		};
-		C07297E92AC9C1F200EA7AF0 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		C07298072ACB014700EA7AF0 /* UIView+Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				C07298082ACB016E00EA7AF0 /* UIControl+Subclasses */,
-			);
-			path = "UIView+Subclasses";
-			sourceTree = "<group>";
-		};
-		C07298082ACB016E00EA7AF0 /* UIControl+Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UIControl+Subclasses";
-			sourceTree = "<group>";
-		};
-		C07298092ACB019C00EA7AF0 /* UIViewController+Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				C072980A2ACB01C700EA7AF0 /* UINavigationController+Subclasses */,
-			);
-			path = "UIViewController+Subclasses";
-			sourceTree = "<group>";
-		};
-		C072980A2ACB01C700EA7AF0 /* UINavigationController+Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UINavigationController+Subclasses";
+			path = Base;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -512,6 +496,8 @@
 				C07298192ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift in Sources */,
 				C072981C2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift in Sources */,
 				C072980D2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift in Sources */,
+				C0FC78BB2AD331A70058066A /* UIAlertController+PropertySetter.swift in Sources */,
+				C0FC78C12AD341C70058066A /* UINavigationItem+PropertySetter.swift in Sources */,
 				C07298102ACB064F00EA7AF0 /* UIImagePickerController+PropertySetter.swift in Sources */,
 				C07297FB2AC9C94000EA7AF0 /* UIButton+PropertySetter.swift in Sources */,
 				C07297FE2ACAE92600EA7AF0 /* UIImageView+ProperySetter.swift in Sources */,
@@ -521,6 +507,7 @@
 				C07297F52AC9C81100EA7AF0 /* ViewShape.swift in Sources */,
 				C07298132ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift in Sources */,
 				C07298222ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */,
+				C0FC78BE2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				F4F4029042ADB0AE2CA9260983A5422F /* SetKit-dummy.m in Sources */,
 				C07298012ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift in Sources */,
 				C07298252ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
@@ -528,6 +515,7 @@
 				C072981F2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,
 				C07297EF2AC9C24100EA7AF0 /* UIView+PropertySetter.swift in Sources */,
 				C07298042ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift in Sources */,
+				C0FC78B72AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +526,8 @@
 				C07298182ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift in Sources */,
 				C072981B2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift in Sources */,
 				C072980C2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift in Sources */,
+				C0FC78BA2AD331A70058066A /* UIAlertController+PropertySetter.swift in Sources */,
+				C0FC78C02AD341C70058066A /* UINavigationItem+PropertySetter.swift in Sources */,
 				C072980F2ACB064F00EA7AF0 /* UIImagePickerController+PropertySetter.swift in Sources */,
 				C07297FA2AC9C94000EA7AF0 /* UIButton+PropertySetter.swift in Sources */,
 				C07297FD2ACAE92600EA7AF0 /* UIImageView+ProperySetter.swift in Sources */,
@@ -547,6 +537,7 @@
 				C07297F42AC9C81100EA7AF0 /* ViewShape.swift in Sources */,
 				C07298122ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift in Sources */,
 				C07298212ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */,
+				C0FC78BD2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				65221F904684F493018D2B059951B9FB /* Pods-SetKit_Example-dummy.m in Sources */,
 				C07298002ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift in Sources */,
 				C07298242ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
@@ -554,6 +545,7 @@
 				C072981E2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,
 				C07297EE2AC9C24100EA7AF0 /* UIView+PropertySetter.swift in Sources */,
 				C07298032ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift in Sources */,
+				C0FC78B62AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

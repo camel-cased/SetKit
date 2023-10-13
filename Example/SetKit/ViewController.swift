@@ -49,8 +49,8 @@ final class ViewController: UIViewController {
   private func setupUI() {
     view.set
       .backgroundColor(.white)
-    circleView.set
-      .backgroundColor(.systemBlue)
+//    circleView.set
+//      .backgroundColor(.systemBlue)
     button.set
       .font(.systemFont(ofSize: 20))
       .titleColor(.systemGreen)
@@ -63,6 +63,11 @@ final class ViewController: UIViewController {
     
     nameLabel.set
       .personInfoLabelStyle(info: "Alex")
+    
+    
+    navigationController?.navigationItem
+    
+    
   }
   
   
