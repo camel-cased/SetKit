@@ -27,8 +27,8 @@ import UIKit
 public extension PropertySetter where Base: UINavigationController {
   
   /// PropertySetter wrapper to access navigationBar propertySetter directly
-  /// - How to use:
-  /// ```
+  /// - Example:
+  /// ```swift
   /// navigationController?.set
   ///     .delegate(self)
   ///     .hidesBarsOnTap(true)
@@ -36,14 +36,21 @@ public extension PropertySetter where Base: UINavigationController {
   ///     .backgroundColor(.green)
   ///     .items([UINavigationItem(title: "Some item")])
   /// ```
+  ///
+  /// `` ``
   var navigationBarProperties: PropertySetter<UINavigationBar> {
     return base.navigationBar.set
   }
   
   /// PropertySetter wrapper to access navigationBar propertySetter directly
-  /// - How to use:
-  /// ```
-  /// 
+  /// - Example:
+  /// ```swift
+  /// navigationController?.set
+  ///   .delegate(self)
+  ///   .hidesBarsOnTap(true)
+  ///   .navigationItemProperties
+  ///   .backBarButtonItem(UIBarButtonItem())
+  ///   .hidesBackButton(true)
   /// ```
   var navigationItemProperties: PropertySetter<UINavigationItem> {
     return base.navigationItem.set

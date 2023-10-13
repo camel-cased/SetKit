@@ -31,9 +31,9 @@ import Foundation
   /// - Attention: Use this case only in `viewDidLayoutSubviews()` method for `UIViewController` subclass or in `layoutSubviews()` method for `UIView` subclass.
   case circle
   
-  /// This case will round corners of the view using `layer.cornerRadius`
+  /// This case will round corners of the view using `layer.cornerRadius` and the value passed into `maskedCorners` parameter.
   /// - Example:
-  ///```
+  ///```swift
   /// view.set
   ///    .corners(.roundedRect(
   ///       10,
@@ -47,7 +47,7 @@ import Foundation
   
   /// This case will round corners of the view using `layer.cornerRadius`
   /// - Example:
-  ///```
+  ///```swift
   /// view.set
   ///    .corners(.roundedRect(10)
   ///```

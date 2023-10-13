@@ -93,7 +93,7 @@ Here is the list of classes supported by SetKit:
 ## Custom extensions
 You can extend PropertySetter to make generic UI elements like this:
 
-```
+```swift
 extension PropertySetter where Base: UILabel {
   
   @discardableResult
@@ -114,7 +114,7 @@ extension PropertySetter where Base: UILabel {
 
 And then use it like any other PropertySetter:
 
-```
+```swift
 ...
     override func viewDidLoad() {
         super.viewDidLoad()

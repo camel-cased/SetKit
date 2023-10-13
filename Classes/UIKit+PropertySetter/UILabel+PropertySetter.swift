@@ -49,7 +49,7 @@ public extension PropertySetter where Base: UILabel {
   
   /// PropertySetter wrapper for `fontSize`
   /// - Will use label's current font to adjust fontSize:
-  /// ```
+  /// ```swift
   /// base.font = base.font.withSize(size)
   /// ```
   @discardableResult

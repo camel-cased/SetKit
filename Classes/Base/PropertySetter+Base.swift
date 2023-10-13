@@ -24,7 +24,7 @@
 import UIKit
 
 // MARK: - PropertySetterCompatible
-/// A type that has property setter extensions.
+/// A protocol to make any class available for PropertySetter
 public protocol PropertySetterCompatible {
   /// Extended type
   associatedtype PSBase
@@ -42,7 +42,9 @@ extension PropertySetterCompatible {
 }
 
 // MARK: - PropertySetter
+/// A type that has property setter extensions.
 @frozen public struct PropertySetter<Base> {
+  /// Extended type
   public let base: Base
   
   init(_ base: Base) {

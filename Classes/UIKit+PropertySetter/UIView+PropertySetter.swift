@@ -287,16 +287,16 @@ public extension PropertySetter where Base: UIView {
   
   /// PropertySetter wrapper for `layer.cornerRadius`
   /// - Examples:
-  ///```
+  ///```swift
   /// view.set
   ///    .corners(.circle)
   ///```
-  ///```
+  ///```swift
   /// view.set
   ///   .corners(.roundedRect(10))
   ///```
+  /// - Read ``ViewShape`` documentation for more info
   /// - Attention: Sets `view.clipsToBounds` to `true`
-  /// - Note: Read the `ViewShape` cases documentation for a better understanding
   @discardableResult
   func corners(_ shape: ViewShape) -> Self {
     base.clipsToBounds = true
