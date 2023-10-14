@@ -290,7 +290,6 @@ public extension PropertySetter where Base: UINavigationItem {
   }
   
   /// PropertySetter wrapper for `.pinnedTrailingGroup`
-  /// See [renameDelegate](x-source-tag://someTag)
   @discardableResult
   func pinnedTrailingGroup(_ group: UIBarButtonItemGroup?) -> Self {
     base.pinnedTrailingGroup = group

@@ -65,7 +65,8 @@ final class ViewController: UIViewController {
       .personInfoLabelStyle(info: "Alex")
     
     
-
+    navigationController?.set
+      
     
   }
   
