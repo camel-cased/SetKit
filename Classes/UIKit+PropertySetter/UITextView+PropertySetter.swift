@@ -202,7 +202,7 @@ public extension PropertySetter where Base: UITextView {
   /// - **Summary:**  A Boolean value that indicates whether a text object disables copying, and in some cases, prevents recording/broadcasting and also hides the text.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitextinputtraits/1624427-issecuretextentry) for more info.
   @discardableResult
-  func isSecureTextEntry(_ bool: Bool) -> Self {
+  func secureTextEntry(_ bool: Bool) -> Self {
     base.isSecureTextEntry = bool
     return self
   }

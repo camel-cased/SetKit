@@ -39,7 +39,7 @@ public extension PropertySetter where Base: UIView {
   /// - **Summary:**  A Boolean value that determines whether the view is opaque.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/1622622-isopaque) for more info.
   @discardableResult
-  func isOpaque(_ bool: Bool) -> Self {
+  func opaque(_ bool: Bool) -> Self {
     base.isOpaque = bool
     return self
   }
@@ -429,6 +429,11 @@ public extension PropertySetter where Base: UIView {
   /// PropertySetter to add shadow
   /// - Note: Sets `.layer.shouldRasterize = true`
   /// - Attention: Use this `PropertySetter` only in `viewDidLayoutSubviews()` method for `UIViewController` subclass or in `layoutSubviews()` method for `UIView` subclass.
+  /// - Parameters:
+  ///   - radius: The radius of the shadow
+  ///   - opacity: The opacity of the shadow. **Default value**: 1
+  ///   - color: The color of the shadow
+  ///   - shadowOffSet: The offset of the shadow. **Default value**: .zero
   @discardableResult
   func shadow(
     radius: CGFloat,
@@ -491,9 +496,47 @@ public extension PropertySetter where Base: UIView {
   @discardableResult
   func maximumContentSizeCategory(_ category: UIContentSizeCategory) -> Self {
     base.maximumContentSizeCategory = category
+    
     return self
   }
   
+  @discardableResult
+  func animation(withDuration: TimeInterval, _ block: @escaping () -> Void) -> Self {
+    UIView.animate(withDuration: withDuration, animations: block)
+    return self
+  }
+  
+  @discardableResult
+  func animation(
+    withDuration: TimeInterval,
+    _ block: @escaping () -> Void,
+    completion: ((Bool) -> Void)? = nil
+  ) -> Self {
+    UIView.animate(withDuration: withDuration, animations: block, completion: completion)
+    return self
+  }
+  
+  @discardableResult
+  func animation(
+    withDuration: TimeInterval,
+    delay: TimeInterval,
+    usingSpringWithDamping: CGFloat,
+    initialSpringVelocity: CGFloat,
+    options: UIView.AnimationOptions = [],
+    animations: @escaping () -> Void,
+    completion: ((Bool) -> Void)? = nil
+  ) -> Self {
+    UIView.animate(
+      withDuration: withDuration,
+      delay: delay,
+      usingSpringWithDamping: usingSpringWithDamping,
+      initialSpringVelocity: initialSpringVelocity,
+      options: options,
+      animations: animations,
+      completion: completion
+    )
+    return self
+  }
 }
 
 // MARK: - iOS17 properties

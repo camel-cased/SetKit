@@ -148,7 +148,7 @@ public extension PropertySetter where Base: UITableViewCell {
   /// - **Summary:**  A Boolean value that indicates whether the cell is in an editable state.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitableviewcell/1623268-isediting) for more info.
   @discardableResult
-  func isEditing(_ bool: Bool) -> Self {
+  func editing(_ bool: Bool) -> Self {
     base.isEditing = bool
     return self
   }
@@ -157,7 +157,7 @@ public extension PropertySetter where Base: UITableViewCell {
   /// - **Summary:**  A Boolean value that indicates whether the cell is highlighted.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitableviewcell/1623241-ishighlighted) for more info.
   @discardableResult
-  func isHighlighted(_ bool: Bool) -> Self {
+  func highlighted(_ bool: Bool) -> Self {
     base.isHighlighted = bool
     return self
   }
@@ -166,7 +166,7 @@ public extension PropertySetter where Base: UITableViewCell {
   /// - **Summary:**  A Boolean value that indicates whether the cell is selected.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitableviewcell/1623263-isselected) for more info.
   @discardableResult
-  func isSelected(_ bool: Bool) -> Self {
+  func selected(_ bool: Bool) -> Self {
     base.isSelected = bool
     return self
   }

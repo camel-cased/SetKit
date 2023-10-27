@@ -383,7 +383,7 @@ public extension PropertySetter where Base: UITableView {
   /// - **Summary:** A Boolean value that indicates whether to allow cell and data prefetching.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitableview/3801922-isprefetchingenabled) for more info.
   @discardableResult
-  func isPrefetchingEnabled(_ bool: Bool) -> Self {
+  func prefetchingEnabled(_ bool: Bool) -> Self {
     base.isPrefetchingEnabled = bool
     return self
   }

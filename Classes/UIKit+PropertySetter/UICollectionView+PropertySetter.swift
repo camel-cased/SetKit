@@ -171,7 +171,7 @@ public extension PropertySetter where Base: UITableView {
   /// - **Summary:**  A Boolean value that determines whether the table view is in editing mode.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitableview/1615001-isediting) for more info.
   @discardableResult
-  func isEditing(_ bool: Bool) -> Self {
+  func editing(_ bool: Bool) -> Self {
     base.isEditing = bool
     return self
   }

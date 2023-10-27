@@ -2,17 +2,32 @@
 //  ViewController.swift
 //  SetKit
 //
-//  Created by camel-cased on 10/01/2023.
-//  Copyright (c) 2023 camel-cased. All rights reserved.
+//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
 //
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import SetKit
 
 final class ViewController: UIViewController {
   
-  private let circleView = UIView()
-  private let button = UIButton()
+  private let label = UILabel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,75 +35,13 @@ final class ViewController: UIViewController {
     setupUI()
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    circleView.set
-      .corners(.circle)
-  }
-  
   deinit {
     print("Deallocating")
   }
   
   private func setupConstraints() {
-    view.set
-      .subviews(circleView, button)
-    NSLayoutConstraint.activate([
-      circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      circleView.heightAnchor.constraint(equalToConstant: 60),
-      circleView.widthAnchor.constraint(equalToConstant: 60),
-      
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-      button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-      button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-      button.heightAnchor.constraint(equalToConstant: 40)
-    ])
   }
   
   private func setupUI() {
-    view.set
-      .backgroundColor(.white)
-    //    circleView.set
-    //      .backgroundColor(.systemBlue)
-    button.set
-      .alpha(0.5)
-      .target(self, action: #selector(buttonTapped), for: .touchUpInside)
-      .imageViewProperties { set in
-        set?
-          .contentMode(.scaleAspectFill)
-          .clipsToBounds(true)
-      }
-      .enabled(false)
-        
-    let nameLabel = UILabel()
-    
-    nameLabel.set
-      .personInfoLabelStyle(info: "Alex")
-    
   }
-  
-  
-  @objc private func buttonTapped() {
-    let vc = ViewController()
-    navigationController?.pushViewController(vc, animated: true)
-  }
-}
-
-
-
-extension PropertySetter where Base: UILabel {
-  
-  @discardableResult
-  func personInfoLabelStyle(info: String) -> Self {
-    base.set
-      .text(info)
-      .font(.systemFont(ofSize: 15))
-      .textColor(.systemBlue)
-      .borderWidth(1)
-      .borderColor(.systemBlue)
-      .alpha(0.7)
-    return self
-  }
-  
 }

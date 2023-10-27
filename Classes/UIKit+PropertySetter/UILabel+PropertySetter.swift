@@ -129,7 +129,7 @@ public extension PropertySetter where Base: UILabel {
   /// - **Summary:**  A Boolean value that determines whether the label draws its text in an enabled state.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uilabel/1620530-isenabled) for more info.
   @discardableResult
-  func isEnabled(_ bool: Bool) -> Self {
+  func enabled(_ bool: Bool) -> Self {
     base.isEnabled = bool
     return self
   }
@@ -138,7 +138,7 @@ public extension PropertySetter where Base: UILabel {
   /// - **Summary:**  A Boolean value that determines whether the label draws its text with a highlight.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uilabel/1620526-ishighlighted) for more info.
   @discardableResult
-  func isHighlighted(_ bool: Bool) -> Self {
+  func highlighted(_ bool: Bool) -> Self {
     base.isHighlighted = bool
     return self
   }
