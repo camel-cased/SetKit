@@ -27,36 +27,50 @@ import UIKit
 public extension PropertySetter where Base: UINavigationController {
   
   /// PropertySetter wrapper to access navigationBar propertySetter directly
-  /// - Example:
+  /// - **Example:**
   /// ```swift
-  /// navigationController?.set
-  ///     .delegate(self)
-  ///     .hidesBarsOnTap(true)
-  ///     .navigationBarProperties
-  ///     .backgroundColor(.green)
-  ///     .items([UINavigationItem(title: "Some item")])
+  ///     navigationController.set
+  ///       .hidesBarsOnSwipe(true)
+  ///       // Edit navigationBar properties
+  ///       .navigationBarProperties { set in
+  ///          set
+  ///            .backgroundColor(.red)
+  ///            .items([UINavigationItem(title: "Settings")], animated: true)
+  ///       }
+  ///       // Fall back to the navigationController properties
+  ///       .navigationBarHidden(true)
+  ///       .delegate(self)
   /// ```
-  var navigationBarProperties: PropertySetter<UINavigationBar> {
-    return base.navigationBar.set
+  ///
+  @discardableResult
+  func navigationBarProperties(_ block: @escaping (PropertySetter<UINavigationBar>) -> Void) -> Self {
+    block(base.navigationBar.set)
+    return self
   }
   
   /// PropertySetter wrapper to access navigationBar propertySetter directly
-  /// - Example:
+  /// - **Example:**
   /// ```swift
   /// navigationController?.set
+  ///   .hidesBarsOnSwipe(true)
+  ///       // Edit navigationItem properties
+  ///   .navigationItemProperties { set in
+  ///      set
+  ///        .backBarButtonItem(UIBarButtonItem(title: "Settings"))
+  ///        .hidesBackButton(true)
+  ///   }
+  ///       // Fall back to the navigationController properties
   ///   .delegate(self)
-  ///   .hidesBarsOnTap(true)
-  ///   .navigationItemProperties
-  ///   .backBarButtonItem(UIBarButtonItem())
-  ///   .hidesBackButton(true)
   /// ```
-  var navigationItemProperties: PropertySetter<UINavigationItem> {
-    return base.navigationItem.set
+  @discardableResult
+  func navigationItemProperties(_ block: @escaping (PropertySetter<UINavigationItem>) -> Void) -> Self {
+    block(base.navigationItem.set)
+    return self
   }
   
   /// PropertySetter wrapper for `.delegate`
-  /// - **Apple documentation:**
-  /// You can use the navigation delegate to perform additional actions in response to changes in the navigation interface.
+  /// - **Summary:** The delegate of the navigation controller object.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621876-delegate) for more info.
   @discardableResult
   func delegate(_ delegate: UINavigationControllerDelegate?) -> Self {
     base.delegate = delegate
@@ -64,14 +78,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.isNavigationBarHidden`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// If true, the navigation bar is hidden. The default value is false. Setting this property changes the visibility of the navigation bar without animating the changes.
+  /// - **Summary:** A Boolean value that indicates whether the navigation bar is hidden.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621850-isnavigationbarhidden) for more info.
   ///
   /// **PropertyWrapper description:**
   ///
-  /// - If you want to animate the change use [navigationBarHidden(_ hidden: Bool, animated: Bool)](x-source-tag://navigationBarHiddenAnimated)
+  /// - If you want to animate the change use ``SetKit/PropertySetter/navigationBarHidden(_:animated:)`` wrapper
   @discardableResult
   func navigationBarHidden(_ bool: Bool) -> Self {
     base.isNavigationBarHidden = bool
@@ -79,9 +91,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.setNavigationBarHidden(_ hidden: Bool, animated: Bool)`
-  /// - Tag: navigationBarHiddenAnimated
+  /// - **Summary:** A Boolean value that indicates whether the navigation bar is hidden.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621885-setnavigationbarhidden) for more info.
   ///
-  /// Setting this property changes the visibility of the navigation bar with animation.
+  /// **PropertyWrapper description:**
+  ///
+  /// - If you want to make the change  without animation set `animated` parameter to `false` or use ``SetKit/PropertySetter/navigationBarHidden(_:)`` wrapper
   @discardableResult
   func navigationBarHidden(_ hidden: Bool, animated: Bool) -> Self {
     base.setNavigationBarHidden(hidden, animated: animated)
@@ -89,16 +104,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.viewControllers`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// The root view controller is at index 0 in the array, the back view controller is at index n-2, and the top controller is at index n-1, where n is the number of items in the array.
-  ///
-  /// Assigning a new array of view controllers to this property is equivalent to calling the setViewControllers(_:animated:) method with the animated parameter set to false.
+  /// - **Summary:** The view controllers currently on the navigation stack.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621873-viewcontrollers) for more info.
   ///
   /// **PropertyWrapper description:**
   ///
-  /// - If you want to animate the change use [viewControllers(_ controllers: [UIViewController], animated: Bool)](x-source-tag://viewControllersAnimated)
+  /// - If you want to animate the change use ``SetKit/PropertySetter/viewControllers(_:animated:)-69lw5`` wrapper
   @discardableResult
   func viewControllers(_ controllers: [UIViewController]) -> Self {
     base.viewControllers = controllers
@@ -106,7 +117,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.setViewControllers(_ controllers: [UIViewController], animated: Bool)`
-  /// - Tag: viewControllersAnimated
+  /// - **Summary:** Replaces the view controllers currently managed by the navigation controller with the specified items.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621861-setviewcontrollers) for more info.
+  ///
+  /// **PropertyWrapper description:**
+  ///
+  /// - If you want to make the change  without animation set `animated` parameter to `false` or use ``SetKit/PropertySetter/viewControllers(_:)-8zuzl`` wrapper
   @discardableResult
   func viewControllers(_ controllers: [UIViewController], animated: Bool) -> Self {
     base.setViewControllers(controllers, animated: animated)
@@ -114,11 +130,8 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.hidesBarsOnSwipe`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// When this property is set to true, an upward swipe hides the navigation bar and toolbar. A downward swipe shows both bars again.
-  /// If the toolbar does not have any items, it remains visible even after a swipe. The default value of this property is false.
+  /// - **Summary:** A Boolean value indicating whether the navigation bar hides its bars in response to a swipe gesture.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621883-hidesbarsonswipe) for more info.
   @discardableResult
   func hidesBarsOnSwipe(_ bool: Bool) -> Self {
     base.hidesBarsOnSwipe = bool
@@ -126,11 +139,8 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.hidesBarsOnTap`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// When the value of this property is true, the navigation controller toggles the hiding and showing of its navigation bar and toolbar in response to an otherwise unhandled tap in the content area.
-  /// The default value of this property is false.
+  /// - **Summary:** A Boolean value indicating whether the navigation controller allows hiding of its bars using a tap gesture.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621879-hidesbarsontap) for more info.
   @discardableResult
   func hidesBarsOnTap(_ bool: Bool) -> Self {
     base.hidesBarsOnTap = bool
@@ -138,10 +148,8 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.hidesBarsWhenKeyboardAppears`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// When this property is set to true, the appearance of the keyboard causes the navigation controller to hide its navigation bar and toolbar. The default value of this property is false.
+  /// - **Summary:**  A Boolean value indicating whether the navigation controller hides its bars when the keyboard appears.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621881-hidesbarswhenkeyboardappears) for more info.
   @discardableResult
   func hidesBarsWhenKeyboardAppears(_ bool: Bool) -> Self {
     base.hidesBarsWhenKeyboardAppears = bool
@@ -149,12 +157,8 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.hidesBottomBarWhenPushed`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// A view controller added as a child of a navigation controller can display an optional toolbar at the bottom of the screen.
-  /// The value of this property on the topmost view controller determines whether the toolbar is visible. If the value of this property is true, the toolbar is hidden.
-  /// If the value of this property is false, the bar is visible.
+  /// - **Summary:** A Boolean value indicating whether the toolbar at the bottom of the screen is hidden when the view controller is pushed on to a navigation controller.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621863-hidesbottombarwhenpushed) for more info.
   @discardableResult
   func hidesBottomBarWhenPushed(_ bool: Bool) -> Self {
     base.hidesBottomBarWhenPushed = bool
@@ -162,13 +166,8 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.hidesBarsWhenVerticallyCompact`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// When the value of this property is true, the navigation controller hides its navigation bar and toolbar when it transitions to a vertically compact environment.
-  /// Upon returning to a vertically regular environment, the navigation controller automatically shows both bars again.
-  /// In addition, unhandled taps in the content area cause the navigation controller to show both bars again.
-  /// The default value of this property is false.
+  /// - **Summary:**  A Boolean value indicating whether the navigation controller hides its bars in a vertically compact environment.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621869-hidesbarswhenverticallycompact) for more info.
   @discardableResult
   func hidesBarsWhenVerticallyCompact(_ bool: Bool) -> Self {
     base.hidesBarsWhenVerticallyCompact = bool
@@ -176,14 +175,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.isToolbarHidden`
-  ///
-  /// **Apple documentation:**
-  ///
-  /// If this property is set to true, the toolbar is not visible. The default value of this property is true.
+  /// - **Summary:**  A Boolean indicating whether the navigation controller’s built-in toolbar is visible.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621875-istoolbarhidden) for more info.
   ///
   /// **PropertyWrapper description:**
   ///
-  /// - If you want to animate the change use [toolbarHidden(_ hidden: Bool, animated: Bool)](x-source-tag://toolbarHiddenAnimated) 
+  /// - If you want to animate the change use ``SetKit/PropertySetter/toolbarHidden(_:animated:)``  wrapper
   @discardableResult
   func toolbarHidden(_ bool: Bool) -> Self {
     base.isToolbarHidden = bool
@@ -191,14 +188,12 @@ public extension PropertySetter where Base: UINavigationController {
   }
   
   /// PropertySetter wrapper for `.setToolbarHidden(_ hidden: Bool, animated: Bool)`
-  /// - Tag: toolbarHiddenAnimated
+  /// - **Summary:**  Changes the visibility of the navigation controller’s built-in toolbar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uinavigationcontroller/1621888-settoolbarhidden) for more info.
   ///
-  /// **Apple documentation:**
+  /// **PropertyWrapper description:**
   ///
-  /// You can use this method to animate changes to the visibility of the built-in toolbar.
-  ///
-  /// Calling this method with the animated parameter set to false is equivalent to setting the value of the isToolbarHidden property directly. 
-  /// The toolbar simply appears or disappears depending on the value in the hidden parameter.
+  /// - If you want to make the change  without animation set `animated` parameter to `false` or use ``SetKit/PropertySetter/toolbarHidden(_:)`` wrapper
   @discardableResult
   func toolbarHidden(_ hidden: Bool, animated: Bool) -> Self {
     base.setToolbarHidden(hidden, animated: animated)

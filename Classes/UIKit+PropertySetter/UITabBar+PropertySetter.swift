@@ -27,6 +27,8 @@ import UIKit
 public extension PropertySetter where Base: UITabBar {
   
   /// PropertySetter wrapper for `.delegate`
+  /// - **Summary:**  The tab bar’s delegate object.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623444-delegate) for more info.
   @discardableResult
   func delegate(_ delegate: UITabBarDelegate?) -> Self {
     base.delegate = delegate
@@ -34,6 +36,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.items`
+  /// - **Summary:**  The items displayed by the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623466-items) for more info.
   @discardableResult
   func items(_ items: [UITabBarItem]?) -> Self {
     base.items = items
@@ -41,6 +45,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.setItems_ items: [UITabBarItem]?, animated: Bool)`
+  /// - **Summary:**  Sets the items on the tab bar, optionally animating any changes into position.
+  /// See [**documentation**]() for more info.
   @discardableResult
   func items(_ items: [UITabBarItem]?, animated: Bool = true) -> Self {
     base.setItems(items, animated: animated)
@@ -48,6 +54,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.isTranslucent`
+  /// - **Summary:**
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623455-setitems) for more info.
   @discardableResult
   func translucent(_ bool: Bool) -> Self {
     base.isTranslucent = bool
@@ -55,6 +63,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.backgroundImage`
+  /// - **Summary:**  The custom background image for the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623469-backgroundimage) for more info.
   @discardableResult
   func backgroundImage(_ image: UIImage?) -> Self {
     base.backgroundImage = image
@@ -62,6 +72,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.barStyle`
+  /// - **Summary:**  The tab bar style that specifies its appearance.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623454-barstyle) for more info.
   @discardableResult
   func barStyle(_ style: UIBarStyle) -> Self {
     base.barStyle = style
@@ -69,6 +81,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.tintColor`
+  /// - **Summary:**  The tint color to apply to the tab bar items.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623460-tintcolor) for more info.
   @discardableResult
   func tintColor(_ color: UIColor) -> Self {
     base.tintColor = color
@@ -76,6 +90,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.barTintColor`
+  /// - **Summary:**  The tint color to apply to the tab bar background.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623445-bartintcolor) for more info.
   @discardableResult
   func barTintColor(_ color: UIColor?) -> Self {
     base.barTintColor = color
@@ -83,6 +99,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.isSpringLoaded`
+  /// - **Summary:**  A Boolean value that specifies whether the object is participating in spring-loaded interaction for a drag and drop activity.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uispringloadedinteractionsupporting/2897189-isspringloaded) for more info.
   @discardableResult
   func springLoaded(_ bool: Bool) -> Self {
     base.isSpringLoaded = bool
@@ -90,6 +108,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.itemPositioning`
+  /// - **Summary:**  The positioning scheme for the tab bar items in the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623468-itempositioning) for more info.
   @discardableResult
   func itemPositioning(_ positioning: UITabBar.ItemPositioning) -> Self {
     base.itemPositioning = positioning
@@ -97,6 +117,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.itemSpacing`
+  /// - **Summary:**  The amount of space (in points) to use between tab bar items.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623446-itemspacing) for more info.
   @discardableResult
   func itemSpacing(_ spacing: CGFloat) -> Self {
     base.itemSpacing = spacing
@@ -104,6 +126,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.itemWidth`
+  /// - **Summary:**  The width (in points) of tab bar items.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623465-itemwidth) for more info.
   @discardableResult
   func itemWidth(_ width: CGFloat) -> Self {
     base.itemWidth = width
@@ -111,6 +135,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.selectedItem`
+  /// - **Summary:**  The currently selected item on the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623453-selecteditem) for more info.
   @discardableResult
   func selectedItem(_ item: UITabBarItem?) -> Self {
     base.selectedItem = item
@@ -118,6 +144,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.selectionIndicatorImage`
+  /// - **Summary:**  The image to use for the selection indicator.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623456-selectionindicatorimage) for more info.
   @discardableResult
   func selectionIndicatorImage(_ image: UIImage) -> Self {
     base.selectionIndicatorImage = image
@@ -125,6 +153,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.shadowImage`
+  /// - **Summary:**  The shadow image to use for the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1623452-shadowimage) for more info.
   @discardableResult
   func shadowImage(_ image: UIImage) -> Self {
     base.shadowImage = image
@@ -132,6 +162,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.unselectedItemTintColor`
+  /// - **Summary:**  The tint color to apply to unselected tabs.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/1648949-unselecteditemtintcolor) for more info.
   @discardableResult
   func unselectedItemTintColor(_ color: UIColor) -> Self {
     base.unselectedItemTintColor = color
@@ -139,6 +171,8 @@ public extension PropertySetter where Base: UITabBar {
   }
   
   /// PropertySetter wrapper for `.standardAppearance`
+  /// - **Summary:**  The appearance settings for a standard-height tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/3198046-standardappearance) for more info.
   @discardableResult
   func standardAppearance(_ appearance: UITabBarAppearance) -> Self {
     base.standardAppearance = appearance
@@ -152,6 +186,8 @@ public extension PropertySetter where Base: UITabBar {
 public extension PropertySetter where Base: UITabBar {
   
   /// PropertySetter wrapper for `.scrollEdgeAppearance`
+  /// - **Summary:**  The appearance settings for the tab bar when the edge of scrollable content aligns with the edge of the tab bar.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uitabbar/3750912-scrolledgeappearance) for more info.
   @discardableResult
   func scrollEdgeAppearance(_ appearance: UITabBarAppearance?) -> Self {
     base.scrollEdgeAppearance = appearance

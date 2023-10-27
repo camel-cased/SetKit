@@ -27,27 +27,35 @@ import UIKit
 public extension PropertySetter where Base: UIControl {
   
   /// PropertySetter wrapper for `.isEnabled`
+  ///  - **Summary:** A Boolean value indicating whether the control is in the enabled state.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618217-isenabled) for more info.
   @discardableResult
-  func isEnabled(_ bool: Bool) -> Self {
+  func enabled(_ bool: Bool) -> Self {
     base.isEnabled = bool
     return self
   }
   
   /// PropertySetter wrapper for `.isSelected`
+  ///   - **Summary:**  A Boolean value indicating whether the control is in the selected state.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618203-isselected) for more info.
   @discardableResult
-  func isSelected(_ bool: Bool) -> Self {
+  func selected(_ bool: Bool) -> Self {
     base.isSelected = bool
     return self
   }
   
   /// PropertySetter wrapper for `.isHighlighted`
+  ///   - **Summary:**  A Boolean value indicating whether the control draws a highlight.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618231-ishighlighted) for more info.
   @discardableResult
-  func isHighlighted(_ bool: Bool) -> Self {
+  func highlighted(_ bool: Bool) -> Self {
     base.isHighlighted = bool
     return self
   }
   
   /// PropertySetter wrapper for `.addTarget` where `event` is `.touchUpInside`
+  ///   - **Summary:**  Associates a target object and action method with the control.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618259-addtarget) for more info.
   @discardableResult
   func tap(_ target: Any?, action: Selector) -> Self {
     base.addTarget(target, action: action, for: .touchUpInside)
@@ -55,6 +63,8 @@ public extension PropertySetter where Base: UIControl {
   }
   
   /// PropertySetter wrapper for `.addTarget`
+  ///   - **Summary:**  Associates a target object and action method with the control.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618259-addtarget) for more info.
   @discardableResult
   func target(_ target: Any?, action: Selector, for event: UIControl.Event) -> Self {
     base.addTarget(target, action: action, for: event)
@@ -62,6 +72,8 @@ public extension PropertySetter where Base: UIControl {
   }
   
   /// PropertySetter wrapper for `.removeTarget`
+  ///   - **Summary:**  Stops the delivery of events to the specified target object.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/1618248-removetarget) for more info.
   @discardableResult
   func removeTarget(_ target: Any?, action: Selector, for event: UIControl.Event) -> Self {
     base.removeTarget(target, action: action, for: event)
@@ -89,6 +101,8 @@ public extension PropertySetter where Base: UIControl {
   }
   
   /// PropertySetter wrapper for `.showsMenuAsPrimaryAction`
+  /// - **Summary:**  A Boolean value that determines whether the context menu interaction is the control’s primary action.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uicontrol/3601223-showsmenuasprimaryaction) for more info.
   @discardableResult
   func showsMenuAsPrimaryAction(_ bool: Bool) -> Self {
     base.showsMenuAsPrimaryAction = bool

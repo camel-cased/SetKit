@@ -27,6 +27,8 @@ import UIKit
 public extension PropertySetter where Base: UIImagePickerController {
   
   /// PropertySetter wrapper for `.delegate`
+  /// - **Summary:** The image picker’s delegate object.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619145-delegate) for more info.
   @discardableResult
   func delegate(_ delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?) -> Self {
     base.delegate = delegate
@@ -34,6 +36,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.sourceType`
+  /// - **Summary:** The type of picker interface to be displayed by the controller.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619167-sourcetype) for more info.
   @discardableResult
   func sourceType(_ type: UIImagePickerController.SourceType) -> Self {
     base.sourceType = type
@@ -41,6 +45,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.allowsEditing`
+  /// - **Summary:** A Boolean value that indicates whether the user is allowed to edit a selected still image or movie.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619137-allowsediting) for more info.
   @discardableResult
   func allowsEditing(_ bool: Bool) -> Self {
     base.allowsEditing = bool
@@ -48,6 +54,20 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.mediaTypes`
+  /// - **Summary:** An array that indicates the media types to access by the media picker controller.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619173-mediatypes) for more info.
+  ///
+  /// **Examples:**
+  /// ```swift
+  /// myImagePickerController.set
+  ///     .mediaTypes = [UTType.movie.identifier]
+  /// ```
+  /// ```swift
+  /// if let mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) {
+  ///     myImagePickerController.set
+  ///         .mediaTypes(mediaTypes)
+  /// }
+  /// ```
   @discardableResult
   func mediaTypes(_ types: [String]) -> Self {
     base.mediaTypes = types
@@ -55,6 +75,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.cameraCaptureMode`
+  /// - **Summary:** The capture mode used by the camera.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619141-cameracapturemode) for more info.
   @discardableResult
   func cameraCaptureMode(_ mode: UIImagePickerController.CameraCaptureMode) -> Self {
     base.cameraCaptureMode = mode
@@ -62,6 +84,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.cameraDevice`
+  /// - **Summary:** The camera used by the image picker controller.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619117-cameradevice) for more info.
   @discardableResult
   func cameraDevice(_ device: UIImagePickerController.CameraDevice) -> Self {
     base.cameraDevice = device
@@ -69,6 +93,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.cameraFlashMode`
+  /// - **Summary:** The flash mode used by the active camera.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619124-cameraflashmode) for more info.
   @discardableResult
   func cameraFlashMode(_ mode: UIImagePickerController.CameraFlashMode) -> Self {
     base.cameraFlashMode = mode
@@ -76,6 +102,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.cameraOverlayView`
+  /// - **Summary:** The view to display on top of the default image picker interface.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619113-cameraoverlayview) for more info.
   @discardableResult
   func cameraOverlayView(_ view: UIView?) -> Self {
     base.cameraOverlayView = view
@@ -83,6 +111,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.cameraViewTransform`
+  /// - **Summary:** The transform to apply to the camera’s preview image.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619142-cameraviewtransform) for more info.
   @discardableResult
   func cameraViewTransform(_ transform: CGAffineTransform) -> Self {
     base.cameraViewTransform = transform
@@ -90,6 +120,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.showsCameraControls`
+  /// - **Summary:**  A Boolean value that indicates whether the image picker displays the default camera controls.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619129-showscameracontrols) for more info.
   @discardableResult
   func showsCameraControls(_ bool: Bool) -> Self {
     base.showsCameraControls = bool
@@ -97,6 +129,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.videoMaximumDuration`
+  /// - **Summary:**  The maximum duration, in seconds, for a video recording.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619146-videomaximumduration) for more info.
   @discardableResult
   func videoMaximumDuration(_ duration: TimeInterval) -> Self {
     base.videoMaximumDuration = duration
@@ -104,6 +138,8 @@ public extension PropertySetter where Base: UIImagePickerController {
   }
   
   /// PropertySetter wrapper for `.videoQuality`
+  /// - **Summary:**  The video recording and transcoding quality.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiimagepickercontroller/1619154-videoquality) for more info.
   @discardableResult
   func videoQuality(_ quality: UIImagePickerController.QualityType) -> Self {
     base.videoQuality = quality

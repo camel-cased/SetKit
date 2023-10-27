@@ -27,6 +27,8 @@ import UIKit
 public extension PropertySetter where Base: UIProgressView {
   
   /// PropertySetter wrapper for `.progress`
+  /// - **Summary:**  The current progress of the progress view.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619844-progress) for more info.
   @discardableResult
   func progress(_ progress: Float) -> Self {
     base.progress = progress
@@ -34,6 +36,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.setProgress(_ progress: Float, animated: Bool)`
+  /// - **Summary:**  Adjusts the current progress of the progress view, optionally animating the change.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619846-setprogress) for more info.
   @discardableResult
   func progress(_ progress: Float, animated: Bool = true) -> Self {
     base.setProgress(progress, animated: animated)
@@ -41,6 +45,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.observedProgress`
+  /// - **Summary:**  The progress object to use for updating the progress view.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619840-observedprogress) for more info.
   @discardableResult
   func observedProgress(_ progress: Progress?) -> Self {
     base.observedProgress = progress
@@ -48,6 +54,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.progressImage`
+  /// - **Summary:**  An image to use for the portion of the progress bar that’s filled.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619837-progressimage) for more info.
   @discardableResult
   func progressImage(_ image: UIImage?) -> Self {
     base.progressImage = image
@@ -55,6 +63,7 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.progressTintColor`
+  /// - **Summary:**  The color shown for the portion of the progress bar that’s filled.
   @discardableResult
   func progressTintColor(_ color: UIColor?) -> Self {
     base.progressTintColor = color
@@ -62,6 +71,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.progressViewStyle`
+  /// - **Summary:**  The current graphical style of the progress view.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619845-progressviewstyle) for more info.
   @discardableResult
   func progressViewStyle(_ style: UIProgressView.Style) -> Self {
     base.progressViewStyle = style
@@ -69,6 +80,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.trackImage`
+  /// - **Summary:**  An image to use for the portion of the track that isn’t filled.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619843-trackimage) for more info.
   @discardableResult
   func trackImage(_ image: UIImage?) -> Self {
     base.trackImage = image
@@ -76,6 +89,8 @@ public extension PropertySetter where Base: UIProgressView {
   }
   
   /// PropertySetter wrapper for `.trackTintColor`
+  /// - **Summary:**  The color shown for the portion of the progress bar that isn’t filled.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiprogressview/1619841-tracktintcolor) for more info.
   @discardableResult
   func trackTintColor(_ color: UIColor?) -> Self {
     base.trackTintColor = color

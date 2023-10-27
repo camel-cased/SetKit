@@ -53,6 +53,6 @@ extension PropertySetterCompatible {
 }
 
 // MARK: - Base extensions
-extension UIView: PropertySetterCompatible {}
-extension UIViewController: PropertySetterCompatible {}
-extension UINavigationItem: PropertySetterCompatible {}
+@MainActor extension UIView: PropertySetterCompatible {}
+@MainActor extension UIViewController: PropertySetterCompatible {}
+@MainActor extension UINavigationItem: PropertySetterCompatible {}

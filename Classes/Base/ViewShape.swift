@@ -24,29 +24,30 @@
 import Foundation
 
 // MARK: - ViewShape
+/// An enum that represents possible shape types to round corners of the view
 @frozen public enum ViewShape {
   
   /// This shape will make your view circle.
-  /// - Note: Will only be effective when `base.bounds.height == base.bounds.width`. Otherwise will clip a capsule shape
+  /// - Will only be effective when `base.bounds.height == base.bounds.width`. Otherwise will clip a capsule shape
   /// - Attention: Use this case only in `viewDidLayoutSubviews()` method for `UIViewController` subclass or in `layoutSubviews()` method for `UIView` subclass.
   case circle
   
   /// This case will round corners of the view using `layer.cornerRadius` and the value passed into `maskedCorners` parameter.
-  /// - Example:
+  /// - **Example:**
   ///```swift
   /// view.set
   ///    .corners(.roundedRect(
   ///       10,
   ///       maskedCorners: [
-  ///           .layerMaxXMaxYCorner,
-  ///           .layerMaxXMinYCorner
+  ///           CACornerMask.layerMaxXMaxYCorner,
+  ///           CACornerMask.layerMaxXMinYCorner
   ///        ]
   ///    ))
   ///```
   case roundedRectWith(maskedCorners: CACornerMask, _ radius: CGFloat)
   
   /// This case will round corners of the view using `layer.cornerRadius`
-  /// - Example:
+  /// - **Example:**
   ///```swift
   /// view.set
   ///    .corners(.roundedRect(10)

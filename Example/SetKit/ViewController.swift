@@ -52,20 +52,21 @@ final class ViewController: UIViewController {
     //    circleView.set
     //      .backgroundColor(.systemBlue)
     button.set
-      .font(.systemFont(ofSize: 20))
-      .titleColor(.systemGreen)
-      .title("Done")
-      .backgroundColor(.systemBlue)
-      .corners(.roundedRect(10))
-      .tap(self, action: #selector(buttonTapped))
-    
+      .alpha(0.5)
+      .target(self, action: #selector(buttonTapped), for: .touchUpInside)
+      .imageViewProperties { set in
+        set?
+          .contentMode(.scaleAspectFill)
+          .clipsToBounds(true)
+      }
+      .enabled(false)
+        
     let nameLabel = UILabel()
     
     nameLabel.set
       .personInfoLabelStyle(info: "Alex")
     
-    
-    navigationController?.set
+      
       
     
   }

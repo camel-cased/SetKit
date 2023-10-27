@@ -27,6 +27,8 @@ import UIKit
 public extension PropertySetter where Base: UIAlertController {
   
   /// PropertySetter wrapper for `.message`
+  /// - **Summary:**  Descriptive text that provides more details about the reason for the alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620106-message) for more info.
   @discardableResult
   func message(_ message: String?) -> Self {
     base.message = message
@@ -34,6 +36,8 @@ public extension PropertySetter where Base: UIAlertController {
   }
   
   /// PropertySetter wrapper for `.title`
+  /// - **Summary:**  The title of the alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620103-title) for more info.
   @discardableResult
   func title(_ title: String?) -> Self {
     base.title = title
@@ -41,6 +45,8 @@ public extension PropertySetter where Base: UIAlertController {
   }
   
   /// PropertySetter wrapper for `.preferredAction`
+  /// - **Summary:**  The preferred action for the user to take from an alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620102-preferredaction) for more info.
   @discardableResult
   func preferredAction(_ action: UIAlertAction?) -> Self {
     base.preferredAction = action
@@ -48,6 +54,12 @@ public extension PropertySetter where Base: UIAlertController {
   }
   
   /// PropertySetter wrapper for `.addAction(_:)`
+  ///  - **Summary:**  Attaches an action object to the alert or action sheet.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620094-addaction) for more info.
+  ///
+  /// **PropertSetter description**
+  ///
+  /// You can use ``SetKit/PropertySetter/actions(_:)`` wrapper to add multiple actions at a time.
   @discardableResult
   func action(_ action: UIAlertAction) -> Self {
     base.addAction(action)
@@ -64,6 +76,8 @@ public extension PropertySetter where Base: UIAlertController {
   }
   
   /// PropertySetter wrapper for `.addTextField()`
+  ///  - **Summary:** Adds a text field to an alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620093-addtextfield) for more info.
   @discardableResult
   func addTextField() -> Self {
     base.addTextField()
@@ -71,6 +85,8 @@ public extension PropertySetter where Base: UIAlertController {
   }
   
   /// PropertySetter wrapper for `.addTextField(configurationHandler:)`
+  ///  - **Summary:**  Adds a text field to an alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/1620093-addtextfield) for more info.
   @discardableResult
   func addTextField(configurationHandler: ((UITextField) -> Void)?) -> Self {
     base.addTextField(configurationHandler: configurationHandler)
@@ -84,6 +100,8 @@ public extension PropertySetter where Base: UIAlertController {
 public extension PropertySetter where Base: UIAlertController {
 
   /// PropertySetter wrapper for `.addTextField()`
+  ///  - **Summary:**  Indicates the severity of the alert.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uialertcontroller/3930353-severity) for more info.
   @discardableResult
   func severity(_ severity: UIAlertControllerSeverity) -> Self {
     base.severity = severity
