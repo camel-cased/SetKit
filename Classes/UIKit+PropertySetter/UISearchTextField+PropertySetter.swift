@@ -23,7 +23,7 @@
 
 import UIKit
 
-// MARK: - UICollectionView
+// MARK: - UISearchTextField
 public extension PropertySetter where Base: UISearchTextField {
   
   /// PropertySetter wrapper for `.tokens`

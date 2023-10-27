@@ -64,6 +64,16 @@
 		C07298222ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */; };
 		C07298242ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */; };
 		C07298252ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */; };
+		C077EF5B2AEBFA9C00619596 /* UIStackView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF5A2AEBFA9C00619596 /* UIStackView+PropertySetter.swift */; };
+		C077EF5C2AEBFA9C00619596 /* UIStackView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF5A2AEBFA9C00619596 /* UIStackView+PropertySetter.swift */; };
+		C077EF5E2AEBFAC400619596 /* UISwitch+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF5D2AEBFAC400619596 /* UISwitch+PropertySetter.swift */; };
+		C077EF5F2AEBFAC400619596 /* UISwitch+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF5D2AEBFAC400619596 /* UISwitch+PropertySetter.swift */; };
+		C077EF612AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF602AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift */; };
+		C077EF622AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF602AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift */; };
+		C077EF642AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */; };
+		C077EF652AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */; };
+		C077EF672AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */; };
+		C077EF682AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */; };
 		C0BBF91E2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */; };
 		C0BBF91F2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */; };
 		C0FC78B62AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */; };
@@ -147,6 +157,11 @@
 		C072981D2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+PropertySetter.swift"; sourceTree = "<group>"; };
 		C07298202ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+PropertySetter.swift"; sourceTree = "<group>"; };
 		C07298232ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077EF5A2AEBFA9C00619596 /* UIStackView+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077EF5D2AEBFAC400619596 /* UISwitch+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077EF602AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageControl+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+PropertySetter.swift"; sourceTree = "<group>"; };
@@ -298,6 +313,11 @@
 				C065D48B2AEA6EE000ACCE3C /* UISearchTextField+PropertySetter.swift */,
 				C065D4882AEA5C8B00ACCE3C /* UISearchBar+PropertySetter.swift */,
 				C065D48E2AEA76A600ACCE3C /* UISearchController+PropertySetter.swift */,
+				C077EF5A2AEBFA9C00619596 /* UIStackView+PropertySetter.swift */,
+				C077EF5D2AEBFAC400619596 /* UISwitch+PropertySetter.swift */,
+				C077EF602AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift */,
+				C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */,
+				C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */,
 			);
 			path = "UIKit+PropertySetter";
 			sourceTree = "<group>";
@@ -526,7 +546,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C07298192ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift in Sources */,
+				C077EF652AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift in Sources */,
+				C077EF622AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift in Sources */,
 				C065D48D2AEA6EE000ACCE3C /* UISearchTextField+PropertySetter.swift in Sources */,
+				C077EF5C2AEBFA9C00619596 /* UIStackView+PropertySetter.swift in Sources */,
 				C072981C2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift in Sources */,
 				C065D48A2AEA5C8B00ACCE3C /* UISearchBar+PropertySetter.swift in Sources */,
 				C072980D2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift in Sources */,
@@ -546,6 +569,7 @@
 				C065D4902AEA76A600ACCE3C /* UISearchController+PropertySetter.swift in Sources */,
 				C07297F52AC9C81100EA7AF0 /* ViewShape.swift in Sources */,
 				C07298132ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift in Sources */,
+				C077EF5F2AEBFAC400619596 /* UISwitch+PropertySetter.swift in Sources */,
 				C07298222ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */,
 				C0FC78BE2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				F4F4029042ADB0AE2CA9260983A5422F /* SetKit-dummy.m in Sources */,
@@ -553,6 +577,7 @@
 				C07298252ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
 				C07297EC2AC9C22700EA7AF0 /* PropertySetter+Base.swift in Sources */,
 				C072981F2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,
+				C077EF682AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */,
 				C07297EF2AC9C24100EA7AF0 /* UIView+PropertySetter.swift in Sources */,
 				C07298042ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift in Sources */,
 				C0FC78B72AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */,
@@ -564,7 +589,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C07298182ACB0BCA00EA7AF0 /* UIProgressView+PropertySetter.swift in Sources */,
+				C077EF642AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift in Sources */,
+				C077EF612AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift in Sources */,
 				C065D48C2AEA6EE000ACCE3C /* UISearchTextField+PropertySetter.swift in Sources */,
+				C077EF5B2AEBFA9C00619596 /* UIStackView+PropertySetter.swift in Sources */,
 				C072981B2ACB0DF400EA7AF0 /* UIActivityIndicatorView+PropertySetter.swift in Sources */,
 				C065D4892AEA5C8B00ACCE3C /* UISearchBar+PropertySetter.swift in Sources */,
 				C072980C2ACB023300EA7AF0 /* UITabBarController+PropertySetter.swift in Sources */,
@@ -584,6 +612,7 @@
 				C065D48F2AEA76A600ACCE3C /* UISearchController+PropertySetter.swift in Sources */,
 				C07297F42AC9C81100EA7AF0 /* ViewShape.swift in Sources */,
 				C07298122ACB08F000EA7AF0 /* UIVideoEditorController+PropertySetter.swift in Sources */,
+				C077EF5E2AEBFAC400619596 /* UISwitch+PropertySetter.swift in Sources */,
 				C07298212ACB19DD00EA7AF0 /* UIToolBar+PropertySetter.swift in Sources */,
 				C0FC78BD2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				65221F904684F493018D2B059951B9FB /* Pods-SetKit_Example-dummy.m in Sources */,
@@ -591,6 +620,7 @@
 				C07298242ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
 				C07297EB2AC9C22700EA7AF0 /* PropertySetter+Base.swift in Sources */,
 				C072981E2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,
+				C077EF672AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */,
 				C07297EE2AC9C24100EA7AF0 /* UIView+PropertySetter.swift in Sources */,
 				C07298032ACAFA5A00EA7AF0 /* UINavigationController+PropertySetter.swift in Sources */,
 				C0FC78B62AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */,

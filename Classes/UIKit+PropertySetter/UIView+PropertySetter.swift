@@ -387,7 +387,7 @@ public extension PropertySetter where Base: UIView {
     return self
   }
   
-  /// Array-based PropertySetter wrapper for `.addSubview(_ view: UIView)`
+  /// Variadic-based PropertySetter wrapper for `.addSubview(_ view: UIView)`
   /// - Note: This method sets `.translatesAutoresizingMaskIntoConstraints = false` for all subviews
   @discardableResult
     func subviews(_ views: UIView...) -> Self {

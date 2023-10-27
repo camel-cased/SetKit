@@ -23,7 +23,7 @@
 
 import UIKit
 
-// MARK: - UICollectionView
+// MARK: - UITextField
 public extension PropertySetter where Base: UITextField {
   
   /// PropertySetter wrapper for `.text`

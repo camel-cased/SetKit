@@ -23,7 +23,7 @@
 
 import UIKit
 
-// MARK: - UICollectionView
+// MARK: - UICollectionViewCell
 public extension PropertySetter where Base: UICollectionViewCell {
   
   /// PropertySetter wrapper to access navigationBar propertySetter directly

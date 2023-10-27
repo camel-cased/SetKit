@@ -66,9 +66,6 @@ final class ViewController: UIViewController {
     nameLabel.set
       .personInfoLabelStyle(info: "Alex")
     
-      
-      
-    
   }
   
   
