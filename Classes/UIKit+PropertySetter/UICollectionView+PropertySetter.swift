@@ -165,7 +165,7 @@ public extension PropertySetter where Base: UICollectionView {
 
 // MARK: - iOS14 properties
 @available(iOS 14.0, *)
-public extension PropertySetter where Base: UITableView {
+public extension PropertySetter where Base: UICollectionView {
   
   /// PropertySetter wrapper for `.isEditing`
   /// - **Summary:**  A Boolean value that determines whether the table view is in editing mode.
