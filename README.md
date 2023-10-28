@@ -46,36 +46,57 @@ $ pod install
 ```swift
 import SetKit
 
-class MyViewController: UIViewController {
-
-    private let someView = UIView()
-    private let someLabel = UILabel()
-    private let someButton = UIButton()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Add subviews using SetKit method
-        view.set
-            .subviews(someView, someLabel, someButton)
-        
-        someView.set
-            .backgroundColor(.black)
-            .corners(10)
-            
-        someLabel.set
-            .text("Foo")
-            .textColor(.red)
-            .font(.systemFont(ofSize: 10))
-            .multiline()
-            
-        someButton.set
-            .title("Done")
-            .titleColor(.green)
-    }
+final class ViewController: UIViewController {
+  
+  private let circleContainer = UIView()
+  private let titleLabel = UILabel()
+  private let nextButton = UIButton()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupUI()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    circleContainer.set
+      .corners(.circle)
+  }
+  
+  // Omitted: Constraints setup
+  
+  private func setupUI() {
+    view.set
+      .backgroundColor(.white)
+      .subviews(circleContainer, titleLabel, nextButton)
+      
+    circleContainer.set
+      .backgroundColor(.systemBlue)
     
+    titleLabel.set
+      .opaque(false)
+      .text("Foo")
+      .textColor(.white)
+      .font(.systemFont(ofSize: 10))
+      .multiline()
+    
+    nextButton.set
+      .backgroundColor(.systemBlue)
+      .corners(.roundedRect(12))
+      .title("Done")
+      .titleColor(.green)
+      .titleLabelProperties { set in
+        set
+          .font(.systemFont(ofSize: 10, weight: .semibold))
+      }
+      .tap(self, action: #selector(buttonTapped))
+  }
+  
+  @objc private func buttonTapped() {
+    // do smth
+  }
 }
-```
+
 
 ## Custom extensions
 You can extend PropertySetter to make generic UI elements like this:

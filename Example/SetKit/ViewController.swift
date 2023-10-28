@@ -27,21 +27,53 @@ import SetKit
 
 final class ViewController: UIViewController {
   
-  private let label = UILabel()
+  private let circleContainer = UIView()
+  private let titleLabel = UILabel()
+  private let nextButton = UIButton()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupConstraints()
     setupUI()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    circleContainer.set
+      .corners(.circle)
   }
   
   deinit {
     print("Deallocating")
   }
   
-  private func setupConstraints() {
+  private func setupUI() {
+    view.set
+      .backgroundColor(.white)
+      .subviews(circleContainer, titleLabel, nextButton)
+    
+    circleContainer.set
+      .backgroundColor(.systemBlue)
+    
+    titleLabel.set
+      .opaque(false)
+      .text("Foo")
+      .textColor(.white)
+      .font(.systemFont(ofSize: 10))
+      .multiline()
+    
+    nextButton.set
+      .backgroundColor(.systemBlue)
+      .corners(.roundedRect(12))
+      .title("Done")
+      .titleColor(.green)
+      .titleLabelProperties { set in
+        set
+          .font(.systemFont(ofSize: 10, weight: .semibold))
+      }
+      .tap(self, action: #selector(buttonTapped))
   }
   
-  private func setupUI() {
+  @objc private func buttonTapped() {
+    // do smth
   }
 }
