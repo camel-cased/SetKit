@@ -25,7 +25,7 @@ import UIKit
 #if COCOAPODS_SUBSPEC_SnappySetKit
 import SnapKit
 
-extension PropertySetter where Base: ConstraintView {
+extension PropertySetter where Base: UIView {
   func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
       base.snp.makeConstraints(closure)
       return self
