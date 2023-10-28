@@ -500,12 +500,24 @@ public extension PropertySetter where Base: UIView {
     return self
   }
   
+  /// PropertySetter wrapper for `.UIView.animate(withDuration:, animations:)`
+  /// - **Summary:**  Animate changes to one or more views using the specified duration.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/1622418-animate) for more info.
+  ///
+  /// > Tip: You don't need to capture `self` using `weak` reference unless you are calling this block from another block that captures self strongly.
+  /// But if you are unsure about potential retain cycles, it's generally a good practice to use weak self when capturing self inside a closure.
   @discardableResult
   func animation(withDuration: TimeInterval, _ block: @escaping () -> Void) -> Self {
     UIView.animate(withDuration: withDuration, animations: block)
     return self
   }
   
+  /// PropertySetter wrapper for `.UIView.animate(withDuration:, animations:, completion:)`
+  /// - **Summary:**  Animate changes to one or more views using the specified duration and completion handler.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/1622515-animate) for more info.
+  ///
+  /// > Tip: You don't need to capture `self` using `weak` reference unless you are calling this block from another block that captures self strongly.
+  /// But if you are unsure about potential retain cycles, it's generally a good practice to use weak self when capturing self inside a closure.
   @discardableResult
   func animation(
     withDuration: TimeInterval,
@@ -516,6 +528,12 @@ public extension PropertySetter where Base: UIView {
     return self
   }
   
+  /// PropertySetter wrapper for `.UIView.animate(withDuration:, delay:, usingSpringWithDamping:, initialSpringVelocity:, options:, animations:, completion:)`
+  /// - **Summary:**  Performs a view animation using a timing curve corresponding to the motion of a physical spring.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/1622594-animate) for more info.
+  ///
+  /// > Tip: You don't need to capture `self` using `weak` reference unless you are calling this block from another block that captures self strongly.
+  /// But if you are unsure about potential retain cycles, it's generally a good practice to use weak self when capturing self inside a closure.
   @discardableResult
   func animation(
     withDuration: TimeInterval,
