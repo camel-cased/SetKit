@@ -53,16 +53,20 @@ final class ViewController: UIViewController {
     
     circleContainer.set
       .backgroundColor(.systemBlue)
-      .constraints { make in
-        
-      }
     
     titleLabel.set
-      .opaque(false)
+      .subview(of: view)
+    // make constraints
+      .constraints { make in
+        make.center.equalToSuperview()
+        make.width.equalTo(view.snp.width).multipliedBy(0.7)
+      }
+    // fall back to the label's properties
       .text("Foo")
       .textColor(.white)
       .font(.systemFont(ofSize: 10))
       .multiline()
+    
     
     nextButton.set
       .backgroundColor(.systemBlue)

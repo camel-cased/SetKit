@@ -26,6 +26,28 @@ import UIKit
 import SnapKit
 
 public extension PropertySetter where Base: UIView {
+  
+  /// PropertySetter wrapper for `.snp.makeConstraints()`
+  ///
+  /// This property wrapper simplifies the process of creating layout constraints using SnapKit, providing a concise and declarative way to define and manage constraints.
+  ///
+  /// - Example: 
+  /// ```swift
+  /// titleLabel.set
+  ///   .subview(of: view)
+  ///     // make constraints
+  ///   .constraints { make in
+  ///      make.center.equalToSuperview()
+  ///      make.width.equalTo(view.snp.width).multipliedBy(0.7)
+  ///    }
+  ///     // fall back to the label's properties  
+  ///   .opaque(false)
+  ///   .text("Foo")
+  ///   .textColor(.white)
+  ///   .font(.systemFont(ofSize: 10))
+  ///    .multiline()
+  /// ```
+  @discardableResult
   func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
       base.snp.makeConstraints(closure)
       return self

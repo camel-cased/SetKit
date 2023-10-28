@@ -29,9 +29,22 @@ Swift 5.0+
 
 SetKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your `Podfile`:
 
+
+
+- Basic version:
+This is the basic version of SetKit, offering a declarative approach for customizing UIKit elements.
 ```
 target '<Your Target Name>' do
-    pod 'SetKit', '~> 1.0.0'
+    pod 'SetKit/Base', '~> 1.0.0'
+end
+```
+
+- SnapKit version:
+This is the enhanced version of SetKit, harnessing the power of SnapKit to provide a feature-rich, declarative approach for customizing UIKit elements with advanced constraint management.
+
+```
+target '<Your Target Name>' do
+    pod 'SetKit/SnappySetKit', '~> 1.0.0'
 end
 ```
 
@@ -81,6 +94,12 @@ final class ViewController: UIViewController {
       .multiline()
     
     nextButton.set
+      .subview(of: view)
+      // If SnappySetKit version is installed:
+      .constraints { make in
+        make.center.equalToSuperview()
+        make.width.equalTo(view.snp.width).multipliedBy(0.7)
+      }
       .backgroundColor(.systemBlue)
       .corners(.roundedRect(12))
       .title("Done")

@@ -26,6 +26,29 @@ import UIKit
 // MARK: - UIView
 public extension PropertySetter where Base: UIView {
   
+  /// Reversed PropertySetter wrapper for `.addSubview(_:)`
+  ///
+  /// This wrapper adds `base` as a `subview` of a `view` passed as a parameter.
+  ///
+  /// >Tip: If you're using SnappySetKit version, it is very very convenient and easy to add constraints in a single expression.
+  /// ```swift
+  /// titleLabel.set
+  ///   .subview(of: view)
+  ///   // make constraints
+  ///   .constraints { make in
+  ///      make.center.equalToSuperview()
+  ///      make.width.equalTo(view.snp.width).multipliedBy(0.7)
+  ///     }
+  ///   // fall back to the label's properties
+  ///   .text("Foo")
+  ///   .textColor(.white)
+  /// ```
+  @discardableResult
+  func subview(of view: UIView) -> Self {
+    view.addSubview(base)
+    return self
+  }
+  
   /// PropertySetter wrapper for `.tag`
   /// - **Summary:**  An integer that you can use to identify view objects in your application.
   /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/1622493-tag) for more info.
