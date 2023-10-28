@@ -25,12 +25,15 @@
 import UIKit
 import SetKit
 
+// MARK: - Controller
 final class ViewController: UIViewController {
   
+  // MARK: - UIElements
   private let circleContainer = UIView()
   private let titleLabel = UILabel()
-  private let nextButton = UIButton()
+  private let addCountButton = UIButton()
   
+  // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
@@ -42,48 +45,56 @@ final class ViewController: UIViewController {
       .corners(.circle)
   }
   
-  deinit {
-    print("Deallocating")
-  }
-  
+  // MARK: - UISetup
   private func setupUI() {
     view.set
       .backgroundColor(.white)
-      .subviews(circleContainer, titleLabel, nextButton)
+      .subviews(circleContainer, addCountButton)
     
     circleContainer.set
+      .constraints { make in
+        make.center.equalToSuperview()
+        make.size.equalTo(200)
+      }
       .backgroundColor(.systemBlue)
     
     titleLabel.set
-      .subview(of: view)
-    // make constraints
+      .subview(of: circleContainer)
       .constraints { make in
         make.center.equalToSuperview()
-        make.width.equalTo(view.snp.width).multipliedBy(0.7)
-      }
-    // fall back to the label's properties
-      .text("Foo")
-      .textColor(.white)
-      .font(.systemFont(ofSize: 10))
-      .multiline()
-      .constraints { make in
-        make.bottom.equalToSuperview().offset(-10)
         make.horizontalEdges.equalToSuperview().inset(10)
       }
+      .font(.systemFont(ofSize: 15, weight: .bold))
+      .textColor(.white)
+      .text("Count = \(count)")
+      .textAlignment(.center)
     
-    nextButton.set
+    addCountButton.set
+      .constraints { make in
+        make.bottom.equalToSuperview().offset(-40)
+        make.horizontalEdges.equalToSuperview().inset(40)
+        make.height.equalTo(40)
+      }
+      .title("Add 1")
       .backgroundColor(.systemBlue)
-      .corners(.roundedRect(12))
-      .title("Done")
-      .titleColor(.green)
+      .corners(.roundedRect(15))
       .titleLabelProperties { set in
         set
-          .font(.systemFont(ofSize: 10, weight: .semibold))
+          .font(.systemFont(ofSize: 13, weight: .semibold))
       }
       .tap(self, action: #selector(buttonTapped))
+    
+  }
+  
+  // MARK: - Private
+  private var count = 0 {
+    didSet {
+      titleLabel.set
+        .text("Count = \(count)")
+    }
   }
   
   @objc private func buttonTapped() {
-    // do smth
+    count += 1
   }
 }
