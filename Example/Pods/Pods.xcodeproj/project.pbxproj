@@ -281,6 +281,7 @@
 			children = (
 				C0FC78AF2AD3287D0058066A /* Base */,
 				C07297E92AC9C1F200EA7AF0 /* UIKit+PropertySetter */,
+				C077F0BE2AED2A2700619596 /* SnapKit+PropertySetter */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,15 +326,7 @@
 			path = "UIKit+PropertySetter";
 			sourceTree = "<group>";
 		};
-		C077F0B92AED243D00619596 /* SnappySetKit */ = {
-			isa = PBXGroup;
-			children = (
-				C077F0BA2AED28C100619596 /* SnapKit+PropertySetter */,
-			);
-			path = SnappySetKit;
-			sourceTree = "<group>";
-		};
-		C077F0BA2AED28C100619596 /* SnapKit+PropertySetter */ = {
+		C077F0BE2AED2A2700619596 /* SnapKit+PropertySetter */ = {
 			isa = PBXGroup;
 			children = (
 				C077F0BB2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift */,
@@ -398,7 +391,6 @@
 		FB690DC02EB1005BE745EBEB928F2354 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C077F0B92AED243D00619596 /* SnappySetKit */,
 				607BD4AE8B15E52A5923EEADBAE7827D /* SetKit */,
 			);
 			name = "Development Pods";
