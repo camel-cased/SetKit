@@ -1,7 +1,7 @@
 //
-//  ConstraintsMaker+PropertySetter.swift
+//  SnapKit
 //
-//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
+//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,29 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if canImport(SnapKit)
+#if os(iOS) || os(tvOS)
 import UIKit
-import SnapKit
+#else
+import AppKit
+#endif
 
-extension PropertySetter where Base: UIView {
-  func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
-      base.snp.makeConstraints(closure)
-      return self
+#if os(iOS) || os(tvOS)
+public protocol ConstraintDirectionalInsetTarget: ConstraintConstantTarget {
+}
+
+@available(iOS 11.0, tvOS 11.0, *)
+extension ConstraintDirectionalInsets: ConstraintDirectionalInsetTarget {
+}
+
+extension ConstraintDirectionalInsetTarget {
+
+  @available(iOS 11.0, tvOS 11.0, *)
+  internal var constraintDirectionalInsetTargetValue: ConstraintDirectionalInsets {
+    if let amount = self as? ConstraintDirectionalInsets {
+      return amount
+    } else {
+      return ConstraintDirectionalInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+    }
   }
 }
 #endif
-

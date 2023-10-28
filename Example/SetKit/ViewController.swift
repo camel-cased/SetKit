@@ -53,6 +53,9 @@ final class ViewController: UIViewController {
     
     circleContainer.set
       .backgroundColor(.systemBlue)
+      .constraints { make in
+        
+      }
     
     titleLabel.set
       .opaque(false)

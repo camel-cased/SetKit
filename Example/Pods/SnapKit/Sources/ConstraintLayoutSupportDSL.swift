@@ -1,7 +1,7 @@
 //
-//  ConstraintsMaker+PropertySetter.swift
+//  SnapKit
 //
-//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
+//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,36 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if canImport(SnapKit)
-import UIKit
-import SnapKit
-
-extension PropertySetter where Base: UIView {
-  func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
-      base.snp.makeConstraints(closure)
-      return self
-  }
-}
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
 #endif
 
+
+@available(iOS 8.0, *)
+public struct ConstraintLayoutSupportDSL: ConstraintDSL {
+    
+    public var target: AnyObject? {
+        return self.support
+    }
+    
+    internal let support: ConstraintLayoutSupport
+    
+    internal init(support: ConstraintLayoutSupport) {
+        self.support = support
+        
+    }
+    
+    public var top: ConstraintItem {
+        return ConstraintItem(target: self.target, attributes: ConstraintAttributes.top)
+    }
+    
+    public var bottom: ConstraintItem {
+        return ConstraintItem(target: self.target, attributes: ConstraintAttributes.bottom)
+    }
+    
+    public var height: ConstraintItem {
+        return ConstraintItem(target: self.target, attributes: ConstraintAttributes.height)
+    }
+}

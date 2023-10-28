@@ -1,9 +1,9 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 target 'SetKit_Example' do
-  pod 'SetKit', :path => '../'
+  pod 'SetKit/SnappySetKit', :path => '../'
 
   target 'SetKit_Tests' do
     inherit! :search_paths
