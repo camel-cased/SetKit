@@ -66,7 +66,10 @@ final class ViewController: UIViewController {
       .textColor(.white)
       .font(.systemFont(ofSize: 10))
       .multiline()
-    
+      .constraints { make in
+        make.bottom.equalToSuperview().offset(-10)
+        make.horizontalEdges.equalToSuperview().inset(10)
+      }
     
     nextButton.set
       .backgroundColor(.systemBlue)

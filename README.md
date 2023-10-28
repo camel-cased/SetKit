@@ -76,18 +76,29 @@ final class ViewController: UIViewController {
     circleContainer.set
       .corners(.circle)
   }
-  
-  // Omitted: Constraints setup
-  
+    
   private func setupUI() {
     view.set
       .backgroundColor(.white)
+      // instead of using `.subview(of: view)` each time you can go with this:
       .subviews(circleContainer, titleLabel, nextButton)
       
     circleContainer.set
+      .subview(of: view)
+      // If SnappySetKit version is installed:
+      .constraints { make in
+        make.center.equalToSuperview()
+        make.size.equalTo(40)
+      }
       .backgroundColor(.systemBlue)
     
     titleLabel.set
+      .subview(of: view)
+      // If SnappySetKit version is installed:
+      .constraints { make in
+        make.top.equalToSuperview().offset(10)
+        make.horizontalEdges.equalToSuperview().inset(10)
+      }
       .opaque(false)
       .text("Foo")
       .textColor(.white)
@@ -98,7 +109,7 @@ final class ViewController: UIViewController {
       .subview(of: view)
       // If SnappySetKit version is installed:
       .constraints { make in
-        make.center.equalToSuperview()
+        make.bottom.equalToSuperview().offset(-10)
         make.width.equalTo(view.snp.width).multipliedBy(0.7)
       }
       .backgroundColor(.systemBlue)
