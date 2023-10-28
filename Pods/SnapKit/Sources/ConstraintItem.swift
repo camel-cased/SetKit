@@ -1,7 +1,7 @@
 //
-//  ConstraintsMaker+PropertySetter.swift
+//  SnapKit
 //
-//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
+//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,41 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import UIKit
-#if COCOAPODS_SUBSPEC_SnappySetKit
-import SnapKit
-
-extension PropertySetter where Base: ConstraintView {
-  func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
-      base.snp.makeConstraints(closure)
-      return self
-  }
-}
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
 #endif
 
+
+public final class ConstraintItem {
+    
+    internal weak var target: AnyObject?
+    internal let attributes: ConstraintAttributes
+    
+    internal init(target: AnyObject?, attributes: ConstraintAttributes) {
+        self.target = target
+        self.attributes = attributes
+    }
+    
+    internal var layoutConstraintItem: LayoutConstraintItem? {
+        return self.target as? LayoutConstraintItem
+    }
+    
+}
+
+public func ==(lhs: ConstraintItem, rhs: ConstraintItem) -> Bool {
+    // pointer equality
+    guard lhs !== rhs else {
+        return true
+    }
+    
+    // must both have valid targets and identical attributes
+    guard let target1 = lhs.target,
+          let target2 = rhs.target,
+          target1 === target2 && lhs.attributes == rhs.attributes else {
+            return false
+    }
+    
+    return true
+}

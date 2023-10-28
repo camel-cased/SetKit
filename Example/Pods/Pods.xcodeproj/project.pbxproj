@@ -74,6 +74,8 @@
 		C077EF652AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */; };
 		C077EF672AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */; };
 		C077EF682AEBFB5400619596 /* UIPageControl+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */; };
+		C077F0BC2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077F0BB2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift */; };
+		C077F0BD2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077F0BB2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift */; };
 		C0BBF91E2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */; };
 		C0BBF91F2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */; };
 		C0FC78B62AD329B90058066A /* UITableViewCell+PropertySetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */; };
@@ -162,6 +164,7 @@
 		C077EF602AEBFB3B00619596 /* UIDatePicker+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+PropertySetter.swift"; sourceTree = "<group>"; };
 		C077EF632AEBFB4700619596 /* UISegmentedControl+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+PropertySetter.swift"; sourceTree = "<group>"; };
 		C077EF662AEBFB5400619596 /* UIPageControl+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageControl+PropertySetter.swift"; sourceTree = "<group>"; };
+		C077F0BB2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintsMaker+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0BBF91D2AE5B5DC0097E7FB /* UICollectionView+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0FC78B52AD329B90058066A /* UITableViewCell+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+PropertySetter.swift"; sourceTree = "<group>"; };
 		C0FC78B92AD331A70058066A /* UIAlertController+PropertySetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+PropertySetter.swift"; sourceTree = "<group>"; };
@@ -322,6 +325,22 @@
 			path = "UIKit+PropertySetter";
 			sourceTree = "<group>";
 		};
+		C077F0B92AED243D00619596 /* SnappySetKit */ = {
+			isa = PBXGroup;
+			children = (
+				C077F0BA2AED28C100619596 /* SnapKit+PropertySetter */,
+			);
+			path = SnappySetKit;
+			sourceTree = "<group>";
+		};
+		C077F0BA2AED28C100619596 /* SnapKit+PropertySetter */ = {
+			isa = PBXGroup;
+			children = (
+				C077F0BB2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift */,
+			);
+			path = "SnapKit+PropertySetter";
+			sourceTree = "<group>";
+		};
 		C0FC78AF2AD3287D0058066A /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +398,7 @@
 		FB690DC02EB1005BE745EBEB928F2354 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				C077F0B92AED243D00619596 /* SnappySetKit */,
 				607BD4AE8B15E52A5923EEADBAE7827D /* SetKit */,
 			);
 			name = "Development Pods";
@@ -574,6 +594,7 @@
 				C0FC78BE2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				F4F4029042ADB0AE2CA9260983A5422F /* SetKit-dummy.m in Sources */,
 				C07298012ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift in Sources */,
+				C077F0BD2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift in Sources */,
 				C07298252ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
 				C07297EC2AC9C22700EA7AF0 /* PropertySetter+Base.swift in Sources */,
 				C072981F2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,
@@ -617,6 +638,7 @@
 				C0FC78BD2AD337B00058066A /* UIScrollView+PropertySetter.swift in Sources */,
 				65221F904684F493018D2B059951B9FB /* Pods-SetKit_Example-dummy.m in Sources */,
 				C07298002ACAF42200EA7AF0 /* UIViewController+PropertySetter.swift in Sources */,
+				C077F0BC2AED28E500619596 /* ConstraintsMaker+PropertySetter.swift in Sources */,
 				C07298242ACB1FF400EA7AF0 /* UINavigationBar+PropertySetter.swift in Sources */,
 				C07297EB2AC9C22700EA7AF0 /* PropertySetter+Base.swift in Sources */,
 				C072981E2ACB0F9A00EA7AF0 /* UITabBar+PropertySetter.swift in Sources */,

@@ -1,7 +1,7 @@
 //
-//  ConstraintsMaker+PropertySetter.swift
+//  SnapKit
 //
-//  Copyright (c) 2023 camel-cased (https://www.linkedin.com/in/camel-cased)
+//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import UIKit
-#if COCOAPODS_SUBSPEC_SnappySetKit
-import SnapKit
-
-extension PropertySetter where Base: ConstraintView {
-  func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
-      base.snp.makeConstraints(closure)
-      return self
-  }
-}
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
 #endif
 
+
+internal enum ConstraintRelation : Int {
+    case equal = 1
+    case lessThanOrEqual
+    case greaterThanOrEqual
+    
+    internal var layoutRelation: LayoutRelation {
+        get {
+            switch(self) {
+            case .equal:
+                return .equal
+            case .lessThanOrEqual:
+                return .lessThanOrEqual
+            case .greaterThanOrEqual:
+                return .greaterThanOrEqual
+            }
+        }
+    }
+}

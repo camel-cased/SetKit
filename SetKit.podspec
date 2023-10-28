@@ -3,6 +3,8 @@ Pod::Spec.new do |s|
   s.version          = '0.0.1'
   s.summary          = 'SetKit is a library for managing UIKit classes properties in a declarative style'
   s.swift_version    = '5'
+  s.ios.deployment_target = '13.0'
+  s.frameworks = 'UIKit'
 
   s.description      = <<-DESC
 Description:
@@ -17,8 +19,12 @@ SetKit.
   s.source           = { :git => 'https://github.com/camel-cased/SetKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://www.linkedin.com/in/camel-cased'
 
-  s.ios.deployment_target = '13.0'
+    s.subspec 'Base' do |setkit|
+      setkit.source_files = 'Classes/**/*.swift'
+  end
 
-  s.source_files = 'Classes/**/*.swift'
-  s.frameworks = 'UIKit'
+  s.subspec 'SnappySetKit' do |snappysetkit|
+      snappysetkit.source_files = 'Classes/**/*.swift'
+      snappysetkit.dependency 'SnapKit', '~> 5.0'
+  end
 end
