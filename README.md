@@ -96,7 +96,7 @@ final class ViewController: UIViewController {
     // do smth
   }
 }
-
+```
 
 ## Custom extensions
 You can extend PropertySetter to make generic UI elements like this:
