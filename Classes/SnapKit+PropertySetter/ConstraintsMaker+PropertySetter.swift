@@ -25,7 +25,7 @@
 import UIKit
 import SnapKit
 
-extension PropertySetter where Base: UIView {
+public extension PropertySetter where Base: UIView {
   func constraints(_ closure: (ConstraintMaker) -> Void) -> Self {
       base.snp.makeConstraints(closure)
       return self
