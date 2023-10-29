@@ -11,11 +11,11 @@ SetKit is a powerful and intuitive Swift library designed to streamline the proc
 
 **Key Features:**
 
-- **Declarative Syntax:** SetKit allows you to define and configure UIKit elements using a clean and expressive declarative syntax. Instead of writing lengthy imperative code, you can simply describe what you want, and the library takes care of the rest.
+- **Declarative Syntax:** SetKit allows you to configure UIKit elements using a clean and expressive declarative syntax. Instead of writing lengthy imperative code, you can simply describe what you want, and the library takes care of the rest.
 - **Intuitive API:** The library provides an intuitive API for setting properties such as fonts, colors, and animations. You can specify these properties in a clear and structured way, making your code more self-explanatory.
 - **Reusable Components:** Create reusable UI components by defining them declaratively. This promotes code reusability and modularity, as you can encapsulate complex UI elements within easily shareable components.
 - **Supports UIKit Elements:** You can use SetKit with various UIKit elements, including labels, buttons, text views, image views, and more. It seamlessly integrates with your existing UIKit-based projects.
-- **Effortless Constraint Management:** SetKit simplifies the process of creating and managing layout constraints, allowing you to define UI element positioning and sizing with ease. Whether you're specifying autolayout rules or leveraging the power of SnapKit, SetKit streamlines constraint handling for a seamless and responsive UI.
+- **Effortless Constraint Management:** SetKit simplifies the process of creating and managing layout constraints, allowing you to define UI element positioning and sizing with ease. Leveraging the power of SnapKit, SetKit simplifies constraint handling for a seamless and responsive UI.
 
 ## Example
 
@@ -55,81 +55,62 @@ Then, run the following command:
 $ pod install
 ```
 
-## Code example
+## TODOs:
+- Add SPM support
+- Integrate Reusable
+- You tell me ^^ 
 
+## Code examples
+
+- **Configure UIKit elements**
 ```swift
-import SetKit
-
-final class ViewController: UIViewController {
-  
-  private let circleContainer = UIView()
-  private let titleLabel = UILabel()
-  private let nextButton = UIButton()
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupUI()
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    circleContainer.set
-      .corners(.circle)
-  }
-    
-  private func setupUI() {
-    view.set
-      .backgroundColor(.white)
-      // instead of using `.subview(of: view)` each time you can go with this:
-      .subviews(circleContainer, titleLabel, nextButton)
-      
-    circleContainer.set
-      .subview(of: view)
-      // If SnappySetKit version is installed:
-      .constraints { make in
-        make.center.equalToSuperview()
-        make.size.equalTo(40)
-      }
-      .backgroundColor(.systemBlue)
-    
-    titleLabel.set
-      .subview(of: view)
-      // If SnappySetKit version is installed:
-      .constraints { make in
-        make.top.equalToSuperview().offset(10)
-        make.horizontalEdges.equalToSuperview().inset(10)
-      }
-      .opaque(false)
-      .text("Foo")
-      .textColor(.white)
-      .font(.systemFont(ofSize: 10))
-      .multiline()
-    
-    nextButton.set
-      .subview(of: view)
-      // If SnappySetKit version is installed:
-      .constraints { make in
-        make.bottom.equalToSuperview().offset(-10)
-        make.width.equalTo(view.snp.width).multipliedBy(0.7)
-      }
-      .backgroundColor(.systemBlue)
-      .corners(.roundedRect(12))
-      .title("Done")
-      .titleColor(.green)
-      .titleLabelProperties { set in
-        set
-          .font(.systemFont(ofSize: 10, weight: .semibold))
-      }
-      .tap(self, action: #selector(buttonTapped))
-  }
-  
-  @objc private func buttonTapped() {
-    // do smth
-  }
-}
+  titleLabel.set
+    .subview(of: view)
+    .opaque(false)
+    .text("Foo")
+    .textColor(.white)
+    .font(.systemFont(ofSize: 10))
+    .multiline()
 ```
 
-## Custom extensions
+- **Constraints setup**
+```swift      
+  circleContainer.set
+    .subview(of: view)
+    .constraints { make in
+      make.center.equalToSuperview()
+      make.size.equalTo(40)
+    }
+    .backgroundColor(.systemBlue)
+```
+
+- **Add multiple subviews at once**
+```swift
+  view.set
+    .backgroundColor(.white)
+    .subviews(circleContainer, titleLabel, nextButton)
+
+```
+
+- **Dive deeper**
+
+No need to switch between embedded views. You can configure them in a single flow:
+```swift
+  button.set
+    .alpha(0.5)
+    .tap(self, action: #selector(buttonTapped))
+     // Edit titleLabel properties
+    .titleLabelProperties { set in
+      set
+        .font(.systemFont(ofSize: 10))
+        .multiline()
+     }
+     // Fall back to the button properties
+    .enabled(false)
+```
+
+- **Custom extensions**
+
 You can extend PropertySetter to make generic UI elements like this:
 
 ```swift
@@ -148,7 +129,6 @@ extension PropertySetter where Base: UILabel {
   }
   
 }
-
 ```
 
 And then use it like any other PropertySetter:
@@ -163,6 +143,17 @@ And then use it like any other PropertySetter:
 ...
 
 ```
+
+## Documentation
+
+SetKit offers a documentation that includes the following sections:
+
+- **Summary:** An overview of a method or a property.
+- **Apple Documentation:** You can find the official documentation from Apple. This will provide you with additional context and resources.
+- **Code Examples and Method-specific Documentation:** I've included code examples and in-depth documentation for many methods to help you understand how to use the library effectively.
+
+Feel free to explore the documentation to make the most of our library. If you have any questions or need assistance, please don't hesitate to reach out.
+
 
 ## Author
 

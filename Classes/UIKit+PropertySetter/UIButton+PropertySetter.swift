@@ -31,7 +31,7 @@ public extension PropertySetter where Base: UIButton {
   /// ```swift
   /// button.set
   ///   .alpha(0.5)
-  ///   .target(self, action: #selector(buttonTapped), for: .touchUpInside)
+  ///   .tap(self, action: #selector(buttonTapped))
   ///     // Edit titleLabel properties
   ///   .titleLabelProperties { set in
   ///       set
