@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SetKit'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'SetKit is a library for managing UIKit classes properties in a declarative style'
   s.swift_version    = '5'
   s.ios.deployment_target = '13.0'
