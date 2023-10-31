@@ -16,7 +16,7 @@ SetKit.
   s.homepage         = 'https://github.com/camel-cased/SetKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'camel-cased' => 'com.camel.cased@icloud.com' }
-  s.source           = { :git => 'https://github.com/camel-cased/SetKit.git', :tag => 'v0.0.2' }
+  s.source           = { :git => 'https://github.com/camel-cased/SetKit.git', :tag => 'v0.0.3' }
   s.social_media_url = 'https://www.linkedin.com/in/camel-cased'
 
     s.subspec 'Base' do |setkit|
