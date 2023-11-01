@@ -413,7 +413,7 @@ public extension PropertySetter where Base: UIView {
   /// Variadic-based PropertySetter wrapper for `.addSubview(_ view: UIView)`
   /// - Note: This method sets `.translatesAutoresizingMaskIntoConstraints = false` for all subviews
   @discardableResult
-    func subviews(_ views: UIView...) -> Self {
+  func subviews(_ views: UIView...) -> Self {
     for view in views {
       view.set
         .translatesAutoresizingMaskIntoConstraints(false)
@@ -474,54 +474,6 @@ public extension PropertySetter where Base: UIView {
     base.layer.shouldRasterize = true
     return self
   }
-}
-
-// MARK: - iOS14 properties
-@available(iOS 14.0, *)
-public extension PropertySetter where Base: UIView {
-  
-  /// PropertySetter wrapper for `.interactions`
-  /// - **Summary:**  The array of interactions for the view.
-  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/2891054-interactions) for more info.
-  @discardableResult
-  func interactions(_ interactions: [UIInteraction]) -> Self {
-    base.interactions = interactions
-    return self
-  }
-  
-}
-
-// MARK: - iOS15 properties
-@available(iOS 15.0, *)
-public extension PropertySetter where Base: UIView {
-  
-  /// PropertySetter wrapper for `.accessibilityIdentifier`
-  /// - **Summary:**  The visual effect to apply when the view becomes focused.
-  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3778578-focuseffect) for more info.
-  @discardableResult
-  func accessibilityIdentifier(_ effect: UIFocusEffect) -> Self {
-    base.focusEffect = effect
-    return self
-  }
-  
-  /// PropertySetter wrapper for `.minimumContentSizeCategory`
-  /// - **Summary:**  The minimum content size category for the view and its subviews.
-  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3750924-minimumcontentsizecategory) for more info.
-  @discardableResult
-  func minimumContentSizeCategory(_ category: UIContentSizeCategory) -> Self {
-    base.minimumContentSizeCategory = category
-    return self
-  }
-  
-  /// PropertySetter wrapper for `.maximumContentSizeCategory`
-  /// - **Summary:**  The maximum content size category for the view and its subviews.
-  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3750923-maximumcontentsizecategory) for more info.
-  @discardableResult
-  func maximumContentSizeCategory(_ category: UIContentSizeCategory) -> Self {
-    base.maximumContentSizeCategory = category
-    
-    return self
-  }
   
   /// PropertySetter wrapper for `.UIView.animate(withDuration:, animations:)`
   /// - **Summary:**  Animate changes to one or more views using the specified duration.
@@ -578,6 +530,55 @@ public extension PropertySetter where Base: UIView {
     )
     return self
   }
+}
+
+// MARK: - iOS14 properties
+@available(iOS 14.0, *)
+public extension PropertySetter where Base: UIView {
+  
+  /// PropertySetter wrapper for `.interactions`
+  /// - **Summary:**  The array of interactions for the view.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/2891054-interactions) for more info.
+  @discardableResult
+  func interactions(_ interactions: [UIInteraction]) -> Self {
+    base.interactions = interactions
+    return self
+  }
+  
+}
+
+// MARK: - iOS15 properties
+@available(iOS 15.0, *)
+public extension PropertySetter where Base: UIView {
+  
+  /// PropertySetter wrapper for `.accessibilityIdentifier`
+  /// - **Summary:**  The visual effect to apply when the view becomes focused.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3778578-focuseffect) for more info.
+  @discardableResult
+  func accessibilityIdentifier(_ effect: UIFocusEffect) -> Self {
+    base.focusEffect = effect
+    return self
+  }
+  
+  /// PropertySetter wrapper for `.minimumContentSizeCategory`
+  /// - **Summary:**  The minimum content size category for the view and its subviews.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3750924-minimumcontentsizecategory) for more info.
+  @discardableResult
+  func minimumContentSizeCategory(_ category: UIContentSizeCategory) -> Self {
+    base.minimumContentSizeCategory = category
+    return self
+  }
+  
+  /// PropertySetter wrapper for `.maximumContentSizeCategory`
+  /// - **Summary:**  The maximum content size category for the view and its subviews.
+  /// See [**documentation**](https://developer.apple.com/documentation/uikit/uiview/3750923-maximumcontentsizecategory) for more info.
+  @discardableResult
+  func maximumContentSizeCategory(_ category: UIContentSizeCategory) -> Self {
+    base.maximumContentSizeCategory = category
+    
+    return self
+  }
+  
 }
 
 // MARK: - iOS17 properties
