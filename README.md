@@ -1,9 +1,9 @@
 # SetKit
 
-[![CI Status](https://img.shields.io/travis/camel-cased/SetKit.svg?style=flat)](https://travis-ci.org/camel-cased/SetKit)
-[![Version](https://img.shields.io/cocoapods/v/SetKit.svg?style=flat)](https://cocoapods.org/pods/SetKit)
-[![License](https://img.shields.io/cocoapods/l/SetKit.svg?style=flat)](https://cocoapods.org/pods/SetKit)
-[![Platform](https://img.shields.io/cocoapods/p/SetKit.svg?style=flat)](https://cocoapods.org/pods/SetKit)
+[![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
+[![Platform](https://img.shields.io/badge/Platform-iOS%2013%2B-blue.svg)](https://developer.apple.com/ios/)
+[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
 ## About
 
@@ -19,46 +19,46 @@ SetKit is a powerful and intuitive Swift library designed to streamline the proc
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo and open `Example/SetKit.xcodeproj` in Xcode.
 
 ## Requirements
-iOS 13.0+
-Xcode 15.0+
-Swift 5.0+
+
+- iOS 13.0+
+- Xcode 15.0+
+- Swift 5.0+
 
 ## Installation
 
-SetKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your `Podfile`:
+### Swift Package Manager
 
+Add SetKit to your project using Xcode:
+1. File → Add Package Dependencies
+2. Enter: `https://github.com/camel-cased/SetKit`
+3. Select version and add to your target
 
+Or add to your `Package.swift`:
 
-- Basic version:
-This is the basic version of SetKit, offering a declarative approach for customizing UIKit elements.
-```
-target '<Your Target Name>' do
-    pod 'SetKit/Base', '~> 1.0.0'
-end
-```
-
-- SnapKit version:
-This is the enhanced version of SetKit, harnessing the power of SnapKit to provide a feature-rich, declarative approach for customizing UIKit elements with advanced constraint management.
-
-```
-target '<Your Target Name>' do
-    pod 'SetKit/SnappySetKit', '~> 1.0.0'
-end
+```swift
+dependencies: [
+    .package(url: "https://github.com/camel-cased/SetKit", from: "1.0.0")
+]
 ```
 
-Then, run the following command:
+### SnapKit Integration
 
-```
-$ pod install
-```
+SetKit automatically detects SnapKit in your project. To enable constraint helpers:
+1. Add SnapKit to your project via SPM
+2. Import both libraries - the `.constraints { }` modifier becomes available
 
-## TODOs:
-- Add SPM support
-- Integrate Reusable
-- You tell me ^^ 
+```swift
+import SetKit
+import SnapKit
+
+view.set
+    .constraints { make in
+        make.edges.equalToSuperview()
+    }
+```
 
 ## Code examples
 
@@ -74,7 +74,7 @@ $ pod install
 ```
 
 - **Constraints setup**
-```swift      
+```swift
   circleContainer.set
     .subview(of: view)
     .constraints { make in
@@ -115,7 +115,7 @@ You can extend PropertySetter to make generic UI elements like this:
 
 ```swift
 extension PropertySetter where Base: UILabel {
-  
+
   @discardableResult
   func personInfoLabelStyle(info: String) -> Self {
     base.set
@@ -127,7 +127,7 @@ extension PropertySetter where Base: UILabel {
       .alpha(0.7)
     return self
   }
-  
+
 }
 ```
 
